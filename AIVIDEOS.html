@@ -1,0 +1,2529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Video Production | Unified Media Marketing Group</title>
+  <meta name="description" content="Professional AI-powered video content that drives views, builds trust, and converts visitors into customers. Done-for-you video production — fast, scalable, results-driven." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* === TOKENS === */
+    :root {
+      --mint: #3ECFA0;
+      --mint-light: #E8FBF4;
+      --mint-dark: #28A87E;
+      --black: #0D1117;
+      --gray-dark: #2C3240;
+      --gray-mid: #5E6779;
+      --gray-light: #F4F6F9;
+      --white: #FFFFFF;
+      --violet: #6C47FF;
+      --violet-light: #F0ECFF;
+      --violet-dark: #4E2FCC;
+      --amber: #F59E0B;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.07);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--gray-dark); background: var(--white); line-height: 1.6; padding-bottom: 60px; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* === NAV === */
+    nav {
+      position: static;
+      background: var(--white);
+      border-bottom: 1px solid #E5E7EB;
+      padding: 16px 32px;
+      display: flex; align-items: center; justify-content: flex-start;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--black);
+      letter-spacing: -0.5px;
+    }
+    .nav-brand span { color: var(--mint-dark); }
+    nav .nav-links { display: flex; gap: 32px; font-size: 0.9rem; font-weight: 500; color: var(--gray-mid); }
+    nav .nav-links a:hover { color: var(--mint-dark); }
+    nav .nav-cta {
+      background: var(--mint); color: var(--white);
+      padding: 10px 22px; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem; transition: background 0.2s;
+    }
+    nav .nav-cta:hover { background: var(--mint-dark); }
+
+    /* === HERO === */
+    .hero {
+      max-width: 1100px; margin: 0 auto;
+      padding: 28px 32px 64px 0px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--violet-light); color: var(--violet-dark);
+      font-size: 1.0rem; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 20px; letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .hero-badge span { width: 6px; height: 6px; background: var(--violet); border-radius: 50%; display: block; animation: pulse-dot 1.8s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.1rem, 5.8vw, 4.6rem);
+      font-weight: 800; color: var(--black); line-height: 1.1; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--mint-dark); }
+    .hero p { font-size: 1.85rem; color: var(--gray-mid); margin-bottom: 36px; max-width: 480px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-proof-box .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hero-proof-box .hero-actions a { text-align: center; width: 100%; }
+    .btn-primary {
+      background: var(--mint); color: var(--white);
+      padding: 14px 28px; border-radius: 9px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer; border: none; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--mint-dark); transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1.5px solid #D1D5DB; color: var(--gray-dark);
+      padding: 14px 28px; border-radius: 9px;
+      font-weight: 500; font-size: 0.95rem;
+      transition: border-color 0.2s, color 0.2s;
+      cursor: pointer; background: transparent; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--mint); color: var(--mint-dark); }
+
+    /* Hero Visual */
+    .hero-visual {
+      background: var(--black);
+      border-radius: 20px;
+      padding: 36px 32px;
+      border: 1.5px solid var(--mint);
+      box-shadow: 0 8px 40px rgba(62,207,160,0.28), 0 2px 12px rgba(0,0,0,0.15);
+      animation: card-glow 3s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(62,207,160,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .video-mockup {
+      background: #1a1f2e;
+      border-radius: 14px;
+      aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .video-play-btn {
+      width: 62px; height: 62px;
+      background: var(--mint);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 0 0 12px rgba(62,207,160,0.18);
+      animation: pulse-ring 2s ease-out infinite;
+      cursor: pointer;
+    }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(62,207,160,0.35); }
+      100% { box-shadow: 0 0 0 20px rgba(62,207,160,0); }
+    }
+    .video-label {
+      position: absolute; bottom: 10px; left: 12px;
+      font-size: 0.72rem; color: rgba(255,255,255,0.5);
+      background: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 4px;
+    }
+    .video-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: rgba(255,255,255,0.08);
+    }
+    .video-bar-fill {
+      height: 100%; width: 40%;
+      background: var(--mint);
+      border-radius: 3px;
+    }
+    .hero-visual .stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    }
+    .v-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .v-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: var(--mint);
+    }
+    .v-stat .lbl { font-size: 0.74rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+    /* === SOCIAL PROOF === */
+    .social-proof {
+      background: var(--gray-light); padding: 28px 32px; text-align: center;
+    }
+    .social-proof-old-p { font-size: 0.82rem; color: var(--gray-mid); margin-bottom: 14px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
+    .social-proof p { font-size: 1.12rem; color: var(--gray-dark); margin-bottom: 18px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 900; }
+    .trust-row {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+    .trust-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 45s linear infinite;
+    }
+    .trust-track:hover { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .trust-pill {
+      font-size: 0.92rem;
+      color: var(--gray-dark);
+      font-weight: 700;
+      white-space: nowrap;
+      padding: 9px 20px;
+      margin: 0 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 2px solid var(--mint);
+      border-radius: 100px;
+      box-shadow: 0 0 8px rgba(62,207,160,0.40), 0 0 18px rgba(62,207,160,0.18);
+      animation: pill-glow 2.5s ease-in-out infinite;
+    }
+    @keyframes pill-glow {
+      0%, 100% { box-shadow: 0 0 6px rgba(62,207,160,0.38), 0 0 14px rgba(62,207,160,0.16); border-color: var(--mint); }
+      50%       { box-shadow: 0 0 14px rgba(62,207,160,0.65), 0 0 28px rgba(62,207,160,0.28); border-color: var(--mint-dark); }
+    }
+
+    /* === SECTION COMMON === */
+    .section-divider { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .divider-line { border: none; border-top: 1px solid #E5E7EB; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-label {
+      display: inline-block; font-size: 1.35rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--mint-dark); margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.7rem, 4.5vw, 3.5rem); font-weight: 800;
+      color: var(--black); margin-bottom: 14px;
+    }
+    .section-header p { font-size: 1.15rem; color: var(--gray-mid); max-width: 500px; margin: 0 auto; }
+
+    /* === SERVICES === */
+    .services { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      border: 1.5px solid var(--mint); border-radius: 16px;
+      padding: 32px 28px; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 24px rgba(62,207,160,0.18);
+      background: var(--white);
+    }
+    .service-card:hover {
+      border-color: var(--mint);
+      box-shadow: 0 8px 32px rgba(62,207,160,0.12);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 48px; height: 48px; background: var(--mint-light);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.4rem; margin-bottom: 20px;
+    }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--black); margin-bottom: 10px; }
+    .service-card p { font-size: 0.88rem; color: var(--gray-mid); line-height: 1.65; }
+
+    /* === HOW IT WORKS === */
+    .how-it-works { background: var(--black); padding: 80px 32px; }
+    .how-inner { max-width: 1100px; margin: 0 auto; }
+    .how-it-works .section-label { color: var(--mint); }
+    .how-it-works .section-header h2 { color: var(--white); }
+    .how-it-works .section-header p { color: rgba(255,255,255,0.55); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 52px; }
+    .step { text-align: center; }
+    .step-num {
+      width: 48px; height: 48px; background: var(--mint); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 800;
+      color: var(--white); margin: 0 auto 18px;
+    }
+    .step h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step p { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* === PROVEN RESULTS === */
+    .proven-results { background: var(--black); padding: 80px 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .proven-results .section-label { color: var(--mint); }
+    .proven-results .section-header h2 { color: var(--white); }
+    .proven-results .section-header p { color: rgba(255,255,255,0.55); }
+    .metrics-grid {
+      max-width: 1100px; margin: 52px auto 0;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    
+    .metric-card:hover { transform: translateY(-4px); }
+    .metric-card:nth-child(even) { background: var(--gray-light); }
+    
+    .metric-icon.green { background: #3ECFA0; }
+    .metric-icon.blue { background: #3B9EE2; }
+    .metric-icon.violet { background: #6C47FF; }
+    .metric-icon.amber { background: #F59E0B; }
+    .metric-icon.teal { background: #28A87E; }
+    .metric-icon.red { background: #EF4444; }
+    
+    
+    
+
+    /* === TESTIMONIALS === */
+    .results { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial {
+      background: #fff; border-radius: 20px; padding: 36px 32px 30px;
+      box-shadow: 0 4px 32px rgba(62,207,160,0.18), 0 2px 8px rgba(0,0,0,0.05);
+      border: 1.5px solid var(--mint);
+      animation: card-glow 3s ease-in-out infinite;
+      display: flex; flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .testimonial:hover { box-shadow: 0 12px 48px rgba(62,207,160,0.13); transform: translateY(-3px); }
+    .t-quote-mark {
+      font-size: 64px; color: var(--mint); line-height: 0.7; margin-bottom: 14px;
+      font-family: 'Playfair Display', serif; font-weight: 800; letter-spacing: -2px;
+    }
+    .stars { display: flex; gap: 4px; margin-bottom: 16px; }
+    .stars span {
+      width: 20px; height: 20px; background: var(--mint);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      display: block;
+    }
+    .testimonial .t-text { font-size: 0.93rem; color: #4a5568; line-height: 1.78; margin-bottom: 20px; font-style: italic; flex: 1; }
+    .t-result {
+      background: var(--mint-light); border: 1.5px solid rgba(62,207,160,0.35);
+      border-radius: 10px; padding: 12px 16px; margin-bottom: 22px;
+      font-size: 0.84rem; font-weight: 700; color: var(--mint-dark);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .t-result::before { content: '✓'; font-size: 0.9rem; font-weight: 800; color: var(--mint-dark); flex-shrink: 0; }
+    .t-divider { border: none; border-top: 1px solid #EDF2F7; margin-bottom: 20px; }
+    .reviewer { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+      border: 2.5px solid var(--mint-light);
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #1a2640 0%, #2C3240 100%);
+    }
+    .avatar-initials { font-weight: 800; font-size: 0.9rem; color: var(--mint); letter-spacing: 0.5px; font-family: 'Playfair Display', serif; }
+    .reviewer-info .name { font-size: 0.93rem; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+    .reviewer-info .role { font-size: 0.78rem; color: var(--gray-mid); margin-bottom: 3px; }
+    .reviewer-info .company { font-size: 0.75rem; color: #9CA3AF; display: flex; align-items: center; gap: 4px; }
+    .reviewer-info .company::before { content: '🏢'; font-size: 0.72rem; }
+
+    /* === WHY US === */
+    .why-us {
+      background: var(--mint-light);
+      border-top: 1px solid rgba(62,207,160,0.2);
+      border-bottom: 1px solid rgba(62,207,160,0.2);
+      padding: 80px 32px;
+    }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 48px; }
+    .why-item {
+      background: var(--white); border-radius: 16px; padding: 28px 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+      border: 1.5px solid var(--mint);
+      box-shadow: 0 4px 24px rgba(62,207,160,0.22), 0 1px 6px rgba(0,0,0,0.05);
+      animation: why-card-glow 3.5s ease-in-out infinite;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+    .why-item:nth-child(2) { animation-delay: 0.7s; }
+    .why-item:nth-child(3) { animation-delay: 1.4s; }
+    .why-item:nth-child(4) { animation-delay: 2.1s; }
+    .why-item:nth-child(5) { animation-delay: 2.8s; }
+    .why-item:nth-child(6) { animation-delay: 3.5s; }
+    @keyframes why-card-glow {
+      0%, 100% { box-shadow: 0 4px 24px rgba(62,207,160,0.22), 0 1px 6px rgba(0,0,0,0.05); border-color: var(--mint); }
+      50%       { box-shadow: 0 8px 40px rgba(62,207,160,0.42), 0 2px 10px rgba(0,0,0,0.07); border-color: var(--mint-dark); }
+    }
+    .why-item:hover { transform: translateY(-4px); box-shadow: 0 12px 48px rgba(62,207,160,0.50); border-color: var(--mint-dark); }
+    .why-icon {
+      width: 48px; height: 48px; background: var(--mint-light);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+      transform-style: preserve-3d;
+      animation: why-icon-3d 4s ease-in-out infinite;
+      filter: drop-shadow(0 3px 8px rgba(62,207,160,0.45));
+    }
+    @keyframes why-icon-3d {
+      0%, 100% {
+        transform: perspective(300px) rotateX(0deg) rotateY(0deg) translateY(0px);
+        filter: drop-shadow(0 3px 8px rgba(62,207,160,0.40));
+      }
+      30% {
+        transform: perspective(300px) rotateX(12deg) rotateY(-8deg) translateY(-6px);
+        filter: drop-shadow(0 8px 14px rgba(62,207,160,0.60));
+      }
+      70% {
+        transform: perspective(300px) rotateX(-8deg) rotateY(10deg) translateY(-3px);
+        filter: drop-shadow(0 6px 10px rgba(62,207,160,0.50));
+      }
+    }
+    .why-item:nth-child(1) .why-icon { animation-delay: 0s; }
+    .why-item:nth-child(2) .why-icon { animation-delay: 0.5s; }
+    .why-item:nth-child(3) .why-icon { animation-delay: 1.0s; }
+    .why-item:nth-child(4) .why-icon { animation-delay: 1.5s; }
+    .why-item:nth-child(5) .why-icon { animation-delay: 2.0s; }
+    .why-item:nth-child(6) .why-icon { animation-delay: 2.5s; }
+    .why-copy h4 { font-size: 0.98rem; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .why-copy p { font-size: 0.84rem; color: var(--gray-mid); line-height: 1.6; }
+
+    /* === FAQ === */
+    .faq-section { max-width: 800px; margin: 0 auto; padding: 80px 32px; }
+    .faq-item { border-bottom: 1px solid #E5E7EB; padding: 22px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 1rem; font-weight: 700; color: var(--black); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--mint-dark); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.75; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding-top 0.2s; }
+    .faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
+
+    /* === CTA === */
+    .cta-section {
+      background: var(--mint-light);
+      border-top: 1px solid rgba(62,207,160,0.2);
+      border-bottom: 1px solid rgba(62,207,160,0.2);
+      padding: 80px 32px; text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.7rem, 4.5vw, 3.6rem); font-weight: 800;
+      color: var(--black); margin-bottom: 16px;
+    }
+    .cta-section > p { font-size: 1rem; color: var(--gray-mid); margin-bottom: 36px; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .cta-form-card {
+      background: var(--white); border-radius: 20px; padding: 44px 40px 36px;
+      max-width: 580px; margin: 0 auto; text-align: left;
+      border: 2px solid var(--mint);
+      box-shadow: 0 0 0 4px rgba(62,207,160,0.10), 0 8px 48px rgba(62,207,160,0.28), 0 2px 12px rgba(0,0,0,0.07);
+      animation: form-card-glow 3s ease-in-out infinite;
+    }
+    @keyframes form-card-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 4px rgba(62,207,160,0.10), 0 8px 48px rgba(62,207,160,0.28), 0 2px 12px rgba(0,0,0,0.07);
+        border-color: var(--mint);
+      }
+      50% {
+        box-shadow: 0 0 0 6px rgba(62,207,160,0.20), 0 14px 64px rgba(62,207,160,0.48), 0 4px 16px rgba(0,0,0,0.09);
+        border-color: var(--mint-dark);
+      }
+    }
+    .cta-form-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+    .cta-form-card .form-sub { font-size: 0.9rem; color: var(--gray-mid); margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--black); margin-bottom: 7px; }
+    .form-group label .req { color: #EF4444; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 13px 16px; border: 1.5px solid #D1D5DB;
+      border-radius: 9px; font-size: 0.93rem; font-family: 'DM Sans', sans-serif;
+      outline: none; transition: border-color 0.2s; background: var(--white); color: var(--gray-dark);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--mint); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #9CA3AF; }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit {
+      width: 100%; background: var(--mint); color: var(--white);
+      padding: 16px 28px; border-radius: 9px; font-weight: 700; font-size: 1.02rem;
+      font-family: 'DM Sans', sans-serif; transition: background 0.2s, transform 0.15s;
+      cursor: pointer; border: none; margin-top: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-submit:hover { background: var(--mint-dark); transform: translateY(-1px); }
+    .cta-note { font-size: 0.78rem; color: var(--gray-mid); text-align: center; margin-top: 16px; }
+    .cta-note a { color: var(--mint-dark); text-decoration: underline; }
+
+    /* === FOOTER === */
+    footer { background: var(--black); color: rgba(255,255,255,0.45); font-size: 0.82rem; }
+    .footer-top {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 48px; padding: 64px 32px 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-brand-col .footer-brand-name { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.2rem; color: var(--white); margin-bottom: 10px; }
+    .footer-brand-name span { color: var(--mint); }
+    .footer-tagline { font-size: 0.84rem; color: rgba(255,255,255,0.4); margin-bottom: 22px; line-height: 1.6; max-width: 260px; }
+    .footer-links-col h4 { color: var(--white); font-size: 0.88rem; font-weight: 700; margin-bottom: 16px; }
+    .footer-links-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links-col ul a { font-size: 0.84rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-links-col ul a:hover { color: var(--mint); }
+    .footer-cta-col h4 { color: var(--white); font-size: 0.88rem; font-weight: 700; margin-bottom: 12px; }
+    .footer-cta-col p { font-size: 0.84rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 18px; }
+    .footer-cta-btn {
+      display: inline-block; background: var(--mint); color: var(--white);
+      padding: 11px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;
+      transition: background 0.2s; margin-bottom: 16px;
+    }
+    .footer-cta-btn:hover { background: var(--mint-dark); }
+    .footer-trust-mini { display: flex; flex-direction: column; gap: 6px; }
+    .footer-trust-mini div { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .footer-trust-mini span { color: var(--mint); font-weight: 700; margin-right: 4px; }
+    .footer-bottom-bar { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 32px; }
+    .footer-bottom-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-legal-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); transition: color 0.2s; }
+    .footer-legal-links a:hover { color: var(--mint); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 500px) {
+      nav { padding: 10px 14px; gap: 8px; }
+      nav a:first-child img { height: 34px !important; max-width: 160px; }
+      nav .nav-cta { padding: 8px 12px; font-size: 0.76rem; white-space: nowrap; flex-shrink: 0; border-radius: 6px; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .hero { padding: 48px 20px 48px; }
+      .services, .results { padding: 60px 20px; }
+      .hero-visual .stat-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .cta-form-card { padding: 32px 22px 28px; }
+      .metrics-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .faq-section { padding: 60px 20px; }
+    }
+
+
+
+    /* === HERO HEADLINE SPLIT === */
+    .hero-split-h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .hero-h1-top {
+      font-size: clamp(3.1rem, 5.8vw, 4.6rem);
+      font-weight: 800;
+      color: var(--black);
+      display: block;
+    }
+    .hero-h1-sub {
+      display: block;
+      margin-top: 0.3em;
+      margin-left: 0;
+      padding-left: 0;
+      font-size: clamp(2.2rem, 4.0vw, 2.9rem);
+      font-weight: 600;
+      color: var(--gray-dark);
+      line-height: 1.3;
+    }
+    .hero-h1-sub em { font-style: normal; color: var(--mint-dark); }
+    /* Remove old .hero h1 em rule conflict */
+    .hero h1 em { font-style: normal; color: var(--mint-dark); }
+
+    /* === VIDEO EXAMPLES === */
+    .video-examples-section {
+      max-width: 1100px; margin: 0 auto; padding: 80px 32px;
+    }
+    .video-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .video-card {
+      background: var(--black);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1.5px solid var(--mint);
+      box-shadow: 0 4px 28px rgba(62,207,160,0.25), 0 2px 10px rgba(0,0,0,0.15);
+      animation: card-glow 3s ease-in-out infinite;
+    }
+    .video-card-screen {
+      background: #1a1f2e;
+      aspect-ratio: 9/16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+    .video-play-circle {
+      width: 60px; height: 60px;
+      background: var(--mint);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 0 14px rgba(62,207,160,0.18);
+      flex-shrink: 0;
+    }
+    .video-card-tag {
+      position: absolute; bottom: 12px; left: 10px; right: 10px;
+      font-size: 0.72rem; color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .video-card-info { padding: 14px 14px 16px; }
+    .video-card-title {
+      font-size: 0.88rem; color: rgba(255,255,255,0.9);
+      margin: 0; font-weight: 700; line-height: 1.3;
+    }
+    .video-card-meta {
+      font-size: 0.74rem; color: rgba(255,255,255,0.4);
+      margin: 5px 0 0; line-height: 1.4;
+    }
+    /* ── Mobile: keep 3 columns, scale everything down proportionally ── */
+    @media (max-width: 600px) {
+      .video-examples-section { padding: 48px 16px; }
+      .video-cards-grid { gap: 10px; }
+      .video-play-circle {
+        width: 36px; height: 36px;
+        font-size: 0.75rem;
+        box-shadow: 0 0 0 7px rgba(62,207,160,0.15);
+      }
+      .video-card-tag {
+        font-size: 0.6rem;
+        bottom: 8px; left: 8px; right: 8px;
+      }
+      .video-card-info { padding: 8px 8px 10px; }
+      .video-card-title { font-size: 0.7rem; }
+      .video-card-meta { font-size: 0.6rem; margin-top: 3px; }
+      .video-card { border-radius: 10px; }
+    }
+    @media (max-width: 380px) {
+      .video-examples-section { padding: 40px 12px; }
+      .video-cards-grid { gap: 8px; }
+      .video-play-circle { width: 28px; height: 28px; font-size: 0.6rem; box-shadow: 0 0 0 5px rgba(62,207,160,0.15); }
+      .video-card-tag { font-size: 0.52rem; }
+      .video-card-title { font-size: 0.62rem; }
+      .video-card-meta { font-size: 0.55rem; }
+    }
+
+    /* === LEGAL MODALS === */
+    /* ── Legal Modals — mobile-first, no display/opacity conflict ── */
+    .legal-modal-overlay {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: 99999;
+      background: rgba(0,0,0,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .legal-modal-overlay.active {
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .legal-modal {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 44px 44px 36px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    }
+    .legal-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 800;
+      color: #0D1117; margin-bottom: 6px;
+    }
+    .legal-modal p {
+      font-size: 0.88rem;
+      color: #5E6779;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .legal-modal p strong { color: #0D1117; }
+    .legal-modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: none; border: none;
+      font-size: 1.5rem; line-height: 1;
+      cursor: pointer; color: #5E6779;
+      padding: 6px 10px; border-radius: 6px;
+      -webkit-tap-highlight-color: transparent;
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .legal-modal-close:hover,
+    .legal-modal-close:active { color: #0D1117; }
+    @media (max-width: 600px) {
+      .legal-modal {
+        padding: 48px 18px 24px;
+        border-radius: 14px;
+        max-height: 90vh;
+      }
+    }
+  
+    .sticky-bottom-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 1050;
+      background: var(--black); padding: 14px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+    }
+    .sticky-bottom-bar .sticky-brand {
+      font-size: 0.85rem; font-weight: 700; color: var(--white);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .sticky-bottom-bar .sticky-cta {
+      background: var(--mint); color: var(--white);
+      padding: 10px 24px; border-radius: 8px; font-weight: 700; font-size: 0.88rem;
+      white-space: nowrap; transition: background 0.2s, transform 0.15s; flex-shrink: 0;
+    }
+    .sticky-bottom-bar .sticky-cta:hover { background: var(--mint-dark); transform: translateY(-1px); }
+
+  
+    @keyframes card-glow {
+      0%, 100% { box-shadow: 0 4px 24px rgba(62,207,160,0.22), 0 2px 8px rgba(0,0,0,0.06); border-color: var(--mint); }
+      50%       { box-shadow: 0 8px 40px rgba(62,207,160,0.42), 0 4px 14px rgba(0,0,0,0.08); border-color: var(--mint-dark); }
+    }
+
+  
+    /* ═══════ REDESIGNED METRIC CARDS ═══════ */
+    .proven-results {
+      background: linear-gradient(160deg, #0a0f1a 0%, #0d1117 50%, #0a1510 100%);
+      padding: 80px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .proven-results::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(62,207,160,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .proven-results .section-label { color: var(--mint); }
+    .proven-results .section-header h2 { color: var(--white); }
+    .proven-results .section-header p { color: rgba(255,255,255,0.55); }
+
+    .metrics-grid {
+      max-width: 1100px; margin: 52px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .metric-card {
+      position: relative;
+      background: #0d1117 !important;
+      border: 1px solid rgba(62,207,160,0.25);
+      border-radius: 24px;
+      padding: 32px 28px;
+      overflow: hidden;
+      transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+      cursor: default;
+      animation: mc-float 5s ease-in-out infinite;
+      box-shadow: 0 0 0 1px rgba(62,207,160,0.08), 0 8px 40px rgba(0,0,0,0.4);
+    }
+
+    .metric-card:nth-child(2) { animation-delay: 0.7s; }
+    .metric-card:nth-child(3) { animation-delay: 1.4s; }
+    .metric-card:nth-child(4) { animation-delay: 2.1s; }
+    .metric-card:nth-child(5) { animation-delay: 2.8s; }
+    .metric-card:nth-child(6) { animation-delay: 3.5s; }
+
+    @keyframes mc-float {
+      0%, 100% {
+        transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px);
+        box-shadow: 0 0 0 1px rgba(62,207,160,0.08), 0 8px 40px rgba(0,0,0,0.4), 0 0 20px rgba(62,207,160,0.12);
+      }
+      30% {
+        transform: perspective(800px) rotateX(4deg) rotateY(-3deg) translateY(-8px);
+        box-shadow: 0 0 0 1px rgba(62,207,160,0.18), 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(62,207,160,0.22);
+      }
+      70% {
+        transform: perspective(800px) rotateX(-3deg) rotateY(4deg) translateY(-4px);
+        box-shadow: 0 0 0 1px rgba(62,207,160,0.15), 0 16px 50px rgba(0,0,0,0.45), 0 0 32px rgba(62,207,160,0.18);
+      }
+    }
+
+    .metric-card:hover {
+      transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-12px) scale(1.02) !important;
+      border-color: var(--mint) !important;
+      box-shadow: 0 0 0 2px rgba(62,207,160,0.4), 0 24px 80px rgba(0,0,0,0.5), 0 0 60px rgba(62,207,160,0.30) !important;
+      animation-play-state: paused;
+    }
+
+    /* Glowing orb background per card */
+    .mc-glow-orb {
+      position: absolute;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.35;
+      top: -40px; right: -40px;
+      pointer-events: none;
+    }
+    .mc-1 .mc-glow-orb { background: #1a5c42; }
+    .mc-2 .mc-glow-orb { display: none; }
+    .mc-3 .mc-glow-orb { background: #2a1f5c; }
+    .mc-4 .mc-glow-orb { background: #0d2018; opacity: 0.2; }
+    .mc-5 .mc-glow-orb { background: #1a5c42; }
+    .mc-6 .mc-glow-orb { background: #0d2018; opacity: 0.2; }
+
+    /* Icon */
+    .mc-icon-wrap {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      display: inline-block;
+      filter: drop-shadow(0 0 10px rgba(62,207,160,0.6));
+      animation: icon-pulse 3s ease-in-out infinite;
+    }
+    .metric-card:nth-child(2) .mc-icon-wrap { animation-delay: 0.4s; }
+    .metric-card:nth-child(3) .mc-icon-wrap { filter: drop-shadow(0 0 10px rgba(108,71,255,0.6)); }
+    .metric-card:nth-child(4) .mc-icon-wrap { filter: drop-shadow(0 0 10px rgba(245,158,11,0.6)); }
+
+    @keyframes icon-pulse {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.1) translateY(-4px); }
+    }
+
+    /* Number */
+    .mc-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+    }
+
+    /* Label */
+    .mc-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Desc */
+    .mc-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+    }
+
+    /* Progress bar */
+    .mc-bar-track {
+      margin-top: 18px;
+      height: 4px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .mc-bar-fill {
+      height: 100%;
+      width: var(--fill, 50%);
+      background: linear-gradient(90deg, var(--mint-dark), var(--mint));
+      border-radius: 100px;
+      box-shadow: 0 0 8px rgba(62,207,160,0.6);
+      animation: bar-grow 1.5s ease-out forwards;
+      transform-origin: left;
+    }
+    @keyframes bar-grow { from { width: 0; } to { width: var(--fill, 50%); } }
+
+    /* Badge */
+    .mc-badge {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(62,207,160,0.15);
+      border: 1px solid rgba(62,207,160,0.35);
+      color: var(--mint);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Diagonal line accent */
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, transparent 50%, rgba(62,207,160,0.06) 50%);
+      border-radius: 0 0 24px 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .metrics-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .metrics-grid { grid-template-columns: 1fr; }
+    }
+
+
+  
+    /* === AI VIDEO SHOWCASE === */
+    .ai-video-showcase {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .aivs-screen {
+      position: relative;
+      background: linear-gradient(160deg, #0a1520 0%, #0d1f15 50%, #0a1117 100%);
+      border-radius: 16px;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border: 1.5px solid var(--mint);
+      box-shadow: 0 0 40px rgba(62,207,160,0.30), inset 0 0 60px rgba(62,207,160,0.05);
+      animation: screen-pulse 4s ease-in-out infinite;
+    }
+    @keyframes screen-pulse {
+      0%, 100% { box-shadow: 0 0 40px rgba(62,207,160,0.28), inset 0 0 60px rgba(62,207,160,0.05); }
+      50%       { box-shadow: 0 0 70px rgba(62,207,160,0.50), inset 0 0 80px rgba(62,207,160,0.10); }
+    }
+    /* Grid background */
+    .aivs-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(62,207,160,0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(62,207,160,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    /* Scanning line */
+    .aivs-scan-line {
+      position: absolute; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(62,207,160,0.7), transparent);
+      animation: scan 3s linear infinite;
+      z-index: 3;
+    }
+    @keyframes scan {
+      0%   { top: 0%; }
+      100% { top: 100%; }
+    }
+    /* Floating particles */
+    .aivs-particles { position: absolute; inset: 0; pointer-events: none; }
+    .aivs-p {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: var(--mint);
+      border-radius: 50%;
+      opacity: 0;
+      animation: particle-float 5s ease-in-out infinite;
+    }
+    .p1 { left: 15%; top: 20%; animation-delay: 0s; }
+    .p2 { left: 75%; top: 15%; animation-delay: 0.8s; }
+    .p3 { left: 85%; top: 60%; animation-delay: 1.6s; }
+    .p4 { left: 20%; top: 75%; animation-delay: 2.4s; }
+    .p5 { left: 50%; top: 85%; animation-delay: 3.2s; }
+    .p6 { left: 35%; top: 40%; animation-delay: 4.0s; }
+    @keyframes particle-float {
+      0%   { opacity: 0; transform: translateY(0) scale(0); }
+      20%  { opacity: 0.9; transform: translateY(-8px) scale(1); }
+      80%  { opacity: 0.7; transform: translateY(-24px) scale(0.8); }
+      100% { opacity: 0; transform: translateY(-40px) scale(0); }
+    }
+    /* Face */
+    .aivs-face-wrap {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    /* aivs-face removed - replaced by ai3d */
+    /* Corner labels */
+    .aivs-label {
+      position: absolute; z-index: 4;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--mint); text-transform: uppercase;
+      background: rgba(13,17,23,0.75);
+      padding: 4px 8px; border-radius: 4px;
+      border: 1px solid rgba(62,207,160,0.3);
+    }
+    .top-left  { top: 12px; left: 12px; }
+    .top-right { top: 12px; right: 12px; animation: blink 1.5s step-end infinite; }
+    .bot-left  { bottom: 48px; left: 12px; }
+    .bot-right { bottom: 48px; right: 12px; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    /* Waveform */
+    .aivs-wave {
+      position: absolute;
+      top: 50%; left: 12px; right: 12px;
+      transform: translateY(-50%);
+      z-index: 4;
+      opacity: 0.9;
+      animation: wave-shift 2s linear infinite;
+    }
+    @keyframes wave-shift { 0%{transform:translateX(0)} 100%{transform:translateX(-20px)} }
+
+    /* Fix hero alignment */
+    .hero { align-items: start; }
+
+
+  
+    /* === VIDEO CARD ANIMATED VISUALS === */
+    .vc-bg-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(62,207,160,0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(62,207,160,0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .vc-scan {
+      position: absolute; left: 0; right: 0; height: 1.5px; z-index: 3;
+      background: linear-gradient(90deg, transparent, rgba(62,207,160,0.8), transparent);
+      animation: vc-scan-anim 2.5s linear infinite;
+    }
+    @keyframes vc-scan-anim { 0%{top:0%} 100%{top:100%} }
+
+    /* Card 1: Brand rings */
+    .vc-rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .vc-ring {
+      position: absolute; border-radius: 50%;
+      border: 1.5px solid rgba(62,207,160,0.4);
+      animation: ring-spin 6s linear infinite;
+    }
+    .r1 { width: 80px; height: 80px; animation-duration: 6s; }
+    .r2 { width: 130px; height: 130px; animation-duration: 9s; animation-direction: reverse; border-color: rgba(62,207,160,0.25); }
+    .r3 { width: 175px; height: 175px; animation-duration: 13s; border-color: rgba(62,207,160,0.15); border-style: dashed; }
+    @keyframes ring-spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    .vc-center-dot {
+      width: 14px; height: 14px; background: var(--mint); border-radius: 50%; z-index: 2;
+      box-shadow: 0 0 20px rgba(62,207,160,0.9);
+      animation: dot-pulse 2s ease-in-out infinite;
+    }
+    @keyframes dot-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+    .vc-text-lines { position: absolute; bottom: 60px; left: 0; right: 0; text-align: center; z-index: 4; }
+    .vc-tl { color: rgba(62,207,160,0.9); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; margin-bottom: 4px; }
+    .tl1 { animation: tl-blink 3s ease-in-out infinite; }
+    .tl3 { animation: tl-blink 3s ease-in-out infinite 1.5s; }
+    @keyframes tl-blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* Card 2: Authority head */
+    .vc-head-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; }
+    .vc-head { width: 65%; max-width: 130px; filter: drop-shadow(0 0 16px rgba(62,207,160,0.7)); animation: head-glow 3s ease-in-out infinite; }
+    @keyframes head-glow {
+      0%,100% { filter: drop-shadow(0 0 14px rgba(62,207,160,0.6)); transform: scale(1); }
+      50%      { filter: drop-shadow(0 0 28px rgba(62,207,160,0.95)); transform: scale(1.03); }
+    }
+    .vc-wave-bar { position: absolute; bottom: 50px; left: 16px; right: 16px; z-index: 4; }
+    .vc-wave-bar svg { width: 100%; }
+    .wb1 { animation: wb 0.6s ease-in-out infinite alternate; }
+    .wb2 { animation: wb 0.5s ease-in-out infinite alternate 0.1s; }
+    .wb3 { animation: wb 0.7s ease-in-out infinite alternate 0.2s; }
+    .wb4 { animation: wb 0.4s ease-in-out infinite alternate 0.3s; }
+    @keyframes wb { 0%{transform:scaleY(0.3)} 100%{transform:scaleY(1)} }
+
+    /* Card 3: Trust builder */
+    .vc-stars { position: absolute; top: 30%; left: 0; right: 0; text-align: center; font-size: 1.4rem; z-index: 3; color: #F59E0B; animation: stars-glow 2s ease-in-out infinite; }
+    @keyframes stars-glow { 0%,100%{text-shadow:0 0 8px rgba(245,158,11,0.5)} 50%{text-shadow:0 0 20px rgba(245,158,11,0.9)} }
+    .vc-quote-lines { position: absolute; top: 52%; left: 20%; right: 20%; z-index: 3; }
+    .vc-ql { height: 3px; background: rgba(62,207,160,0.4); border-radius: 2px; margin-bottom: 8px; animation: ql-grow 3s ease-in-out infinite; }
+    .ql1 { width: 100%; }
+    .ql2 { width: 80%; animation-delay: 0.3s; }
+    .ql3 { width: 60%; animation-delay: 0.6s; }
+    @keyframes ql-grow { 0%,100%{opacity:0.4} 50%{opacity:1} }
+    .vc-avatars { position: absolute; bottom: 70px; left: 0; right: 0; display: flex; justify-content: center; gap: 12px; z-index: 3; }
+    .vc-avatar { font-size: 1.2rem; filter: drop-shadow(0 0 8px rgba(62,207,160,0.6)); animation: av-float 3s ease-in-out infinite; }
+    .av2 { animation-delay: 0.5s; }
+    .av3 { animation-delay: 1s; }
+    @keyframes av-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+    .vc-counter { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 3; }
+    .vc-counter-num { color: var(--mint); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 800; }
+    .vc-counter-lbl { color: rgba(255,255,255,0.6); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* Shared particles */
+    .vc-particles { position: absolute; inset: 0; pointer-events: none; }
+    .vcp { position: absolute; width: 3px; height: 3px; background: var(--mint); border-radius: 50%; opacity: 0; animation: vcp-float 4s ease-in-out infinite; }
+    .vcp1 { left: 20%; top: 30%; animation-delay: 0s; }
+    .vcp2 { left: 75%; top: 20%; animation-delay: 1s; }
+    .vcp3 { left: 80%; top: 70%; animation-delay: 2s; }
+    .vcp4 { left: 25%; top: 80%; animation-delay: 3s; }
+    @keyframes vcp-float { 0%{opacity:0;transform:translateY(0)} 30%{opacity:0.8} 100%{opacity:0;transform:translateY(-30px)} }
+
+
+  
+    /* === 3D AI FACE === */
+    .ai3d-container {
+      position: relative;
+      width: 160px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-style: preserve-3d;
+      animation: ai3d-tilt 6s ease-in-out infinite;
+    }
+    @keyframes ai3d-tilt {
+      0%   { transform: perspective(500px) rotateY(0deg) rotateX(4deg); }
+      25%  { transform: perspective(500px) rotateY(15deg) rotateX(-3deg); }
+      50%  { transform: perspective(500px) rotateY(0deg) rotateX(6deg); }
+      75%  { transform: perspective(500px) rotateY(-15deg) rotateX(-3deg); }
+      100% { transform: perspective(500px) rotateY(0deg) rotateX(4deg); }
+    }
+
+    /* Orbit rings */
+    .ai3d-orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(62,207,160,0.4);
+      animation: orbit3d 5s linear infinite;
+    }
+    .or1 { width: 220px; height: 80px; top: 40px; transform: rotateX(75deg); border-color: rgba(62,207,160,0.35); animation-duration: 5s; }
+    .or2 { width: 190px; height: 60px; top: 55px; transform: rotateX(75deg); border-color: rgba(62,207,160,0.2); animation-duration: 7s; animation-direction: reverse; border-style: dashed; }
+    @keyframes orbit3d { 0%{transform:rotateX(75deg) rotateZ(0deg)} 100%{transform:rotateX(75deg) rotateZ(360deg)} }
+
+    /* Main head */
+    .ai3d-head {
+      position: relative;
+      width: 120px;
+      height: 140px;
+      background: linear-gradient(160deg, #0f2820 0%, #0a1a14 60%, #071210 100%);
+      border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+      border: 2px solid rgba(62,207,160,0.6);
+      box-shadow: 0 0 30px rgba(62,207,160,0.35), inset 0 0 20px rgba(62,207,160,0.08), 2px 4px 0 rgba(0,0,0,0.5);
+      margin-top: 24px;
+      overflow: hidden;
+    }
+
+    /* Forehead chip */
+    .ai3d-forehead {
+      position: absolute;
+      top: 12px; left: 50%; transform: translateX(-50%);
+      width: 48px; height: 14px;
+      background: rgba(62,207,160,0.12);
+      border: 1px solid rgba(62,207,160,0.5);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: space-around;
+      padding: 0 4px;
+    }
+    .ai3d-chip span {
+      width: 4px; height: 4px;
+      background: var(--mint);
+      border-radius: 50%;
+      animation: chip-blink 2s ease-in-out infinite;
+    }
+    .ai3d-chip span:nth-child(2) { animation-delay: 0.3s; }
+    .ai3d-chip span:nth-child(3) { animation-delay: 0.6s; }
+    .ai3d-chip span:nth-child(4) { animation-delay: 0.9s; }
+    @keyframes chip-blink { 0%,100%{opacity:1;background:var(--mint)} 50%{opacity:0.2;background:rgba(62,207,160,0.3)} }
+
+    /* Eyes */
+    .ai3d-eyes {
+      position: absolute;
+      top: 40px; left: 50%; transform: translateX(-50%);
+      width: 80px;
+      display: flex; justify-content: space-between;
+    }
+    .ai3d-eye {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.5);
+      border: 2px solid rgba(62,207,160,0.7);
+      box-shadow: 0 0 12px rgba(62,207,160,0.5), inset 0 0 8px rgba(62,207,160,0.15);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .ai3d-eye-inner {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .ai3d-pupil {
+      width: 10px; height: 10px;
+      background: var(--mint);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(62,207,160,1);
+      animation: pupil-scan 4s ease-in-out infinite;
+    }
+    @keyframes pupil-scan {
+      0%,100% { transform: translate(0,0); }
+      20%  { transform: translate(3px,-2px); }
+      40%  { transform: translate(-3px,2px); }
+      60%  { transform: translate(2px,3px); }
+      80%  { transform: translate(-2px,-3px); }
+    }
+    .ai3d-scan-eye {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: rgba(62,207,160,0.7);
+      animation: eye-scan 2s linear infinite;
+    }
+    @keyframes eye-scan { 0%{top:0} 100%{top:100%} }
+
+    /* Nose panel */
+    .ai3d-nose-panel {
+      position: absolute;
+      top: 78px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 5px;
+    }
+    .ai3d-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(62,207,160,0.5); }
+    .d2 { background: rgba(62,207,160,0.8); animation: dot-glow 2s ease-in-out infinite; }
+    @keyframes dot-glow { 0%,100%{opacity:0.5} 50%{opacity:1;box-shadow:0 0 8px rgba(62,207,160,0.9)} }
+
+    /* Mouth/speaker */
+    .ai3d-mouth {
+      position: absolute;
+      bottom: 22px; left: 50%; transform: translateX(-50%);
+      width: 56px; height: 14px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 3px;
+      border: 1px solid rgba(62,207,160,0.4);
+      display: flex; align-items: center; justify-content: space-around;
+      padding: 0 4px;
+    }
+    .ai3d-speaker-bar {
+      width: 4px;
+      background: var(--mint);
+      border-radius: 2px;
+      transform-origin: bottom;
+    }
+    .sb1 { height: 4px; animation: spk 0.5s ease-in-out infinite alternate; }
+    .sb2 { height: 8px; animation: spk 0.4s ease-in-out infinite alternate 0.1s; }
+    .sb3 { height: 10px; animation: spk 0.6s ease-in-out infinite alternate 0.2s; }
+    .sb4 { height: 8px; animation: spk 0.45s ease-in-out infinite alternate 0.3s; }
+    .sb5 { height: 4px; animation: spk 0.55s ease-in-out infinite alternate 0.4s; }
+    @keyframes spk { 0%{transform:scaleY(0.3)} 100%{transform:scaleY(1)} }
+
+    /* Ears */
+    .ai3d-ear {
+      position: absolute;
+      top: 48px;
+      width: 12px; height: 28px;
+      background: linear-gradient(to right, #0f2820, #0a1a14);
+      border: 1.5px solid rgba(62,207,160,0.5);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ai3d-ear.left  { left: -13px; border-radius: 3px 0 0 3px; }
+    .ai3d-ear.right { right: -13px; border-radius: 0 3px 3px 0; }
+    .ai3d-ear-led {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 8px rgba(62,207,160,0.9);
+      animation: led-blink 1.8s ease-in-out infinite;
+    }
+    .ai3d-ear.right .ai3d-ear-led { animation-delay: 0.9s; }
+    @keyframes led-blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
+
+    /* Neck */
+    .ai3d-neck {
+      width: 24px; height: 16px;
+      background: linear-gradient(180deg, #0f2820 0%, #071210 100%);
+      border-left: 1.5px solid rgba(62,207,160,0.4);
+      border-right: 1.5px solid rgba(62,207,160,0.4);
+    }
+
+    /* Base glow */
+    .ai3d-base-glow {
+      width: 100px; height: 12px;
+      background: radial-gradient(ellipse, rgba(62,207,160,0.5) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: base-pulse 3s ease-in-out infinite;
+    }
+    @keyframes base-pulse { 0%,100%{opacity:0.6;transform:scaleX(1)} 50%{opacity:1;transform:scaleX(1.2)} }
+
+
+  
+    #wireface-canvas {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+    .ai3d-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+  
+    /* === HERO PROOF SECTION === */
+    .hero-proof-section {
+      background: var(--gray-light);
+      padding: 48px 0;
+      border-top: 1px solid rgba(62,207,160,0.15);
+      border-bottom: 1px solid rgba(62,207,160,0.15);
+    }
+    .hero-proof-box {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1.5px solid var(--mint);
+      border-radius: 20px;
+      padding: 40px 48px;
+      box-shadow: 0 8px 48px rgba(62,207,160,0.22), 0 2px 12px rgba(0,0,0,0.06);
+      animation: proof-box-glow 3s ease-in-out infinite;
+    }
+    @keyframes proof-box-glow {
+      0%, 100% { box-shadow: 0 8px 48px rgba(62,207,160,0.22), 0 2px 12px rgba(0,0,0,0.06); border-color: var(--mint); }
+      50%       { box-shadow: 0 12px 64px rgba(62,207,160,0.40), 0 4px 16px rgba(0,0,0,0.08); border-color: var(--mint-dark); }
+    }
+    .hero-proof-box p {
+      font-size: 1.1rem;
+      color: var(--gray-dark);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .hero-proof-box ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @media (max-width: 900px) {
+      .hero-proof-box { padding: 32px 28px; margin: 0 24px; }
+    }
+
+
+  
+    /* === ANIMATED ARROW === */
+    .proof-arrow-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 4px;
+    }
+    .proof-arrow {
+      animation: arrow-bounce 1.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 8px rgba(62,207,160,0.7));
+    }
+    @keyframes arrow-bounce {
+      0%, 100% { transform: translateY(0px); opacity: 1; }
+      40%       { transform: translateY(10px); opacity: 0.7; }
+      70%       { transform: translateY(6px); opacity: 0.9; }
+    }
+    .proof-arrow-label {
+      font-size: 1.38rem;
+      font-weight: 700;
+      color: var(--mint-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      animation: label-fade 1.5s ease-in-out infinite;
+    }
+    @keyframes label-fade {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.5; }
+    }
+
+
+  
+    /* === FALLING PILLS BOX === */
+    .falling-box {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      height: 260px;
+      border: 2px solid var(--mint);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(180deg, rgba(62,207,160,0.03) 0%, rgba(62,207,160,0.08) 100%);
+      box-shadow: 0 0 28px rgba(62,207,160,0.22), inset 0 0 20px rgba(62,207,160,0.04);
+    }
+    /* Fade top and bottom edges */
+    .falling-box::before, .falling-box::after {
+      content: '';
+      position: absolute; left: 0; right: 0; z-index: 2; height: 50px; pointer-events: none;
+    }
+    .falling-box::before { top: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.95), transparent); }
+    .falling-box::after  { bottom: 0; background: linear-gradient(to top, rgba(255,255,255,0.95), transparent); }
+
+    .falling-pills-track {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 0;
+      animation: pills-fall 8s linear infinite;
+    }
+    @keyframes pills-fall {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    .fall-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 2px solid var(--mint);
+      border-radius: 100px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-dark);
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(62,207,160,0.30), 0 2px 6px rgba(0,0,0,0.05);
+      animation: pill-glow-fall 2.5s ease-in-out infinite;
+    }
+    .fp2 { animation-delay: 0.5s; }
+    .fp3 { animation-delay: 1.0s; }
+    .fp4 { animation-delay: 1.5s; }
+    @keyframes pill-glow-fall {
+      0%,100% { box-shadow: 0 0 8px rgba(62,207,160,0.28), 0 2px 6px rgba(0,0,0,0.05); border-color: var(--mint); }
+      50%      { box-shadow: 0 0 18px rgba(62,207,160,0.50), 0 2px 8px rgba(0,0,0,0.07); border-color: var(--mint-dark); }
+    }
+
+    /* Because box */
+    .because-box {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--mint-light);
+      border: 2px solid var(--mint);
+      border-radius: 18px;
+      padding: 28px 32px;
+      box-shadow: 0 0 24px rgba(62,207,160,0.20);
+    }
+    .because-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 18px;
+    }
+    .because-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .bc-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--mint);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-dark);
+      box-shadow: 0 0 8px rgba(62,207,160,0.25);
+      animation: pill-glow-fall 3s ease-in-out infinite;
+    }
+    .bc-pill:nth-child(2) { animation-delay: 0.6s; }
+    .bc-pill:nth-child(3) { animation-delay: 1.2s; }
+    .bc-pill:nth-child(4) { animation-delay: 1.8s; }
+
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="data:image/png;base64,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IgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIi/JHBjHPPBoJQcdVPHTxGSV4a30lQvnHmRJZnOhoJDIHeSdg+ld/NjHlNDb5aCB4bONd4Krwx9bd5nyVUrpQHE7/esGfPXFXuW5paWTbyRSkOarnkv1a6oqdpu3x1XIOaszS2F4d7lxVlXDT03MsAa8LXKqsldqXv1Vaz7N81v+HZOC+MYdXHF8ke2Sr7y+Ulp4LDVNXHxc8D+qw91vMUDTqRr71rk1xkr5A2B5G0dAvuLWtf6hM7vM6vH167htFTdo49dJB3rHTXyT9wkr6tOXeILyQ6GSTR3DyVvWH8iMSyBpk5w/2KSx8d39qTu/OpiescI8N5rSdzHLkivFWPPa4KcKPI66tjAfE4n8K4LnkZeHMdzUbx/Ys08dVF1+c54n3CJKe7h257tFkIauKQAiQd671/yXxNRF0m1IB+BahWWi42N+xVPdqPSFqZePmv0sfHfNseXqMnptcc4ZvadV2WXJ2zsHgVplFfI3P5skEjcsm2sa8agrRthmJ9rZTew7NO6z2yNzpY6lmu0NSs5gLMOsw9dae3sLxEToTruWomtI4u3LHVsgLuej3PHArb1c1sU9T9Kfz3CYdqs2xx1K/WX+Lqe80lOBUNc4tGo1W7tcHDUHVUMyMx7UWO67VwqS6IP3AnTcro4Ev0N9tYqoSC3dwKn6Wi0dw5RsYLYLzS0NjREXpgEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREJ0GqAtKzFxMyyQSNMoZq3Tj6QsniPE9LZ6Z0sxbo30lVkzyxw3E1QG26XZAe0HZPoK82tFY7l7x0m9orDXMR3Ke64ne9wJjd19S+q+VlsZpC4HUb9F+UfNstDZJADL95YCvqXTaku10VX29ic1+v07R8U4KmvijLePbhuFVtPMrjpqtSxDehBq1j9Vz4lujYKdw10K1O3WusxFM0wPcQXdSy62vFv5W+mz8j5+ujTwpPt2cPa3q7mCo3RnTeVZH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TiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl2lR80F5unFg9aHenTiwetDvVGelNy7So+adKbl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EBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERB16qjp6lmxNGHD0FaTi7AdquDH83Qs2iNx0W/Ih9qj46yXukkkklFG9jTw0aoruWW+ILQ489JJoPS1ehFREJmbJWsX3BdHdNrnQ3f6QvNqRLVzaeLNH8oUEnFVQOLJZDqOOq60l+5vznq59xyNslY9zniLf/CsTNyc8OycRD8KxTgrKMvwGtZULpI0nQP+aG8vkOjX8VbhvJtw4DrpD8K54uTrh5hBAh3fwr5GvV5rwGtH6VDip6+uOzFK7f6FlLblpiK6yNdFJIQf4Vb635H2SjcCwRfCtvsmB6K2ACMN3egL3GKsN7FxmDF9Qq5grI29MkbJVse9pOu9qn3A+Wttt9O3wmhaXgcSFKFPA2GNrBwC5VkiOm/Wla/UOhb7TQ0TGiCBrCPQu+BoiL69CIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiD/9k=" alt="Unified Media Marketing Group" style="height:48px;width:auto;" />
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span></span> AI-Powered Video Production</div>
+      <h1 class="hero-split-h1">
+        <span class="hero-h1-top">Stay Visible Everywhere —</span>
+        <span class="hero-h1-sub">Without Recording, Editing, or Posting a Single Video <em>Yourself</em></span>
+      </h1>
+
+    </div>
+    <div class="hero-visual">
+      <div class="ai-video-showcase">
+        <!-- Animated AI video frame mockup -->
+        <div class="aivs-screen">
+          <div class="aivs-scan-line"></div>
+          <div class="aivs-grid"></div>
+          <div class="aivs-particles">
+            <span class="aivs-p p1"></span>
+            <span class="aivs-p p2"></span>
+            <span class="aivs-p p3"></span>
+            <span class="aivs-p p4"></span>
+            <span class="aivs-p p5"></span>
+            <span class="aivs-p p6"></span>
+          </div>
+          <!-- Central AI face silhouette -->
+          
+          <!-- Corner labels -->
+          <div class="aivs-label top-left">AI RENDERING</div>
+          <div class="aivs-label top-right">●&nbsp;LIVE</div>
+          <div class="aivs-label bot-left">48HR DELIVERY</div>
+          <div class="aivs-label bot-right">4K OUTPUT</div>
+          <!-- Bottom waveform -->
+          <div class="aivs-wave">
+            <svg viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="0,20 15,10 30,28 45,8 60,24 75,14 90,30 105,6 120,22 135,12 150,26 165,8 180,20 195,16 210,28 225,10 240,24 255,14 270,22 285,18 300,20" stroke="#3ECFA0" stroke-width="1.5" fill="none" opacity="0.7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="v-stat">
+          <div class="num">8.3×</div>
+          <div class="lbl">Avg. engagement lift</div>
+        </div>
+        <div class="v-stat">
+          <div class="num">48hr</div>
+          <div class="lbl">Video turnaround</div>
+        </div>
+        <div class="v-stat">
+          <div class="num">2.1M+</div>
+          <div class="lbl">Organic views</div>
+        </div>
+        <div class="v-stat">
+          <div class="num">$0</div>
+          <div class="lbl">Ad spend needed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- HERO PROOF SECTION -->
+  <section class="hero-proof-section">
+    <!-- Animated arrow pointing down to the box -->
+    <div class="proof-arrow-wrap">
+      <div class="proof-arrow">
+        <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Curved arrow line -->
+          <path d="M20 2 C20 2 20 40 20 46" stroke="#3ECFA0" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Arrowhead -->
+          <path d="M8 38 L20 54 L32 38" stroke="#3ECFA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <span class="proof-arrow-label">See how we do it</span>
+    </div>
+    <div class="hero-proof-box">
+      <p>We create and publish 15–120 videos per month for your business so you stay in front of your audience, build trust, and never fall behind competitors again.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;align-items:center;gap:10px;font-size:0.93rem;font-weight:500;color:var(--gray-dark);"><span style="width:20px;height:20px;background:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;color:#fff;flex-shrink:0;">✓</span>Show up consistently across top platforms</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:0.93rem;font-weight:500;color:var(--gray-dark);"><span style="width:20px;height:20px;background:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;color:#fff;flex-shrink:0;">✓</span>Build authority and brand recognition</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:0.93rem;font-weight:500;color:var(--gray-dark);"><span style="width:20px;height:20px;background:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;color:#fff;flex-shrink:0;">✓</span>Stay top-of-mind with your audience</li>
+        <li style="display:flex;align-items:center;gap:10px;font-size:0.93rem;font-weight:500;color:var(--gray-dark);"><span style="width:20px;height:20px;background:var(--mint);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;color:#fff;flex-shrink:0;">✓</span>Done for you — no filming required</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">👉 Get My Free Custom Video</a>
+        <a href="tel:+18005550199" class="btn-ghost">👉 Call Now</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- SOCIAL PROOF -->
+<div class="social-proof">
+  <p>Trusted by businesses across these industries</p>
+  <div class="trust-row">
+    <div class="trust-track">
+      <span class="trust-pill">🏥 Healthcare</span>
+      <span class="trust-pill">🏡 Real Estate</span>
+      <span class="trust-pill">⚖️ Legal</span>
+      <span class="trust-pill">🛒 E-Commerce</span>
+      <span class="trust-pill">🎓 Education</span>
+      <span class="trust-pill">🏦 Finance</span>
+      <span class="trust-pill">🏗️ Roofing Contractors</span>
+      <span class="trust-pill">⚖️ Personal Injury Lawyers</span>
+      <span class="trust-pill">🦷 Dentists & Cosmetic Dental</span>
+      <span class="trust-pill">🔧 Auto Repair Shops</span>
+      <span class="trust-pill">💆 Med Spas & Aesthetic Clinics</span>
+      <span class="trust-pill">❄️ HVAC Companies</span>
+      <span class="trust-pill">🔨 Plumbing Companies</span>
+      <span class="trust-pill">🛡️ Criminal Defense & DUI Lawyers</span>
+      <span class="trust-pill">🩺 Chiropractors</span>
+      <span class="trust-pill">💧 Water & Fire Damage Restoration</span>
+      <span class="trust-pill">🏠 General Contractors & Remodelers</span>
+      <span class="trust-pill">🏢 Property Management Companies</span>
+      <span class="trust-pill">🍽️ Restaurants</span>
+      <span class="trust-pill">🔑 Real Estate Agents</span>
+      <span class="trust-pill">🚗 Car Dealerships</span>
+      <span class="trust-pill">🏥 Urgent Care Clinics</span>
+      <span class="trust-pill">🐾 Veterinary Clinics</span>
+      <span class="trust-pill">📦 Moving Companies</span>
+      <span class="trust-pill">🧹 Cleaning Companies</span>
+      <span class="trust-pill">💇 Hair Salons & Nail Salons</span>
+      <span class="trust-pill">🏥 Healthcare</span>
+      <span class="trust-pill">🏡 Real Estate</span>
+      <span class="trust-pill">⚖️ Legal</span>
+      <span class="trust-pill">🛒 E-Commerce</span>
+      <span class="trust-pill">🎓 Education</span>
+      <span class="trust-pill">🏦 Finance</span>
+      <span class="trust-pill">🏗️ Roofing Contractors</span>
+      <span class="trust-pill">⚖️ Personal Injury Lawyers</span>
+      <span class="trust-pill">🦷 Dentists & Cosmetic Dental</span>
+      <span class="trust-pill">🔧 Auto Repair Shops</span>
+      <span class="trust-pill">💆 Med Spas & Aesthetic Clinics</span>
+      <span class="trust-pill">❄️ HVAC Companies</span>
+      <span class="trust-pill">🔨 Plumbing Companies</span>
+      <span class="trust-pill">🛡️ Criminal Defense & DUI Lawyers</span>
+      <span class="trust-pill">🩺 Chiropractors</span>
+      <span class="trust-pill">💧 Water & Fire Damage Restoration</span>
+      <span class="trust-pill">🏠 General Contractors & Remodelers</span>
+      <span class="trust-pill">🏢 Property Management Companies</span>
+      <span class="trust-pill">🍽️ Restaurants</span>
+      <span class="trust-pill">🔑 Real Estate Agents</span>
+      <span class="trust-pill">🚗 Car Dealerships</span>
+      <span class="trust-pill">🏥 Urgent Care Clinics</span>
+      <span class="trust-pill">🐾 Veterinary Clinics</span>
+      <span class="trust-pill">📦 Moving Companies</span>
+      <span class="trust-pill">🧹 Cleaning Companies</span>
+      <span class="trust-pill">💇 Hair Salons & Nail Salons</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr class="divider-line" /></div>
+
+<!-- BEING FORGOTTEN SECTION — CRITICAL -->
+<section style="max-width:860px;margin:0 auto;padding:72px 32px;text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,3.4rem);font-weight:800;color:var(--black);margin-bottom:20px;line-height:1.1;">If You're Not Posting Consistently...<br>You're Being Forgotten</h2>
+  <p style="font-size:1rem;color:var(--gray-mid);margin-bottom:40px;">Most businesses know video matters. But they:</p>
+
+  <!-- Falling pills container -->
+  <div class="falling-box">
+    <div class="falling-pills-track">
+      <div class="fall-pill fp1">📭 Post once... then disappear</div>
+      <div class="fall-pill fp2">🤷 Don't know what to say</div>
+      <div class="fall-pill fp3">⏰ Don't have time to create content</div>
+      <div class="fall-pill fp4">🙈 Don't want to be on camera</div>
+      <!-- Repeat for continuous loop -->
+      <div class="fall-pill fp1">📭 Post once... then disappear</div>
+      <div class="fall-pill fp2">🤷 Don't know what to say</div>
+      <div class="fall-pill fp3">⏰ Don't have time to create content</div>
+      <div class="fall-pill fp4">🙈 Don't want to be on camera</div>
+    </div>
+  </div>
+
+  <!-- And because of that box -->
+  <div class="because-box">
+    <p class="because-title">And because of that...</p>
+    <div class="because-pills">
+      <span class="bc-pill">👻 They stay invisible</span>
+      <span class="bc-pill">📉 They lose attention</span>
+      <span class="bc-pill">💔 They lose trust</span>
+      <span class="bc-pill">💸 They lose opportunities</span>
+    </div>
+  </div>
+</section>
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What You Get</div>
+    <h2>Built for Businesses That Want More Visibility Without More Work</h2>
+    <p>15–120 videos per month. Consistent content output. Multi-platform presence. Content designed to get attention.</p>
+    <p style="margin-top:16px;font-size:0.95rem;color:var(--black);font-weight:600;max-width:600px;margin-left:auto;margin-right:auto;">Most businesses choose consistent video content because it builds trust over time and keeps them in front of their market.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>AI Brand Story Videos</h3>
+      <p>Compelling 60–90 second brand videos with AI voiceovers, b-roll, captions, and music — built to stop the scroll on every platform.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎯</div>
+      <h3>Short-Form Reels & Shorts</h3>
+      <p>Platform-optimized vertical content for Instagram, TikTok, and YouTube Shorts. Consistent posting calendars that grow your audience fast.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>AI Avatar Spokesperson Videos</h3>
+      <p>Photorealistic AI avatars deliver your message on camera — no filming required. Perfect for explainers, promos, and testimonials.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Product & Service Demos</h3>
+      <p>Walkthroughs and feature showcases that reduce buyer hesitation, answer objections visually, and accelerate purchase decisions.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📣</div>
+      <h3>Video Ad Creatives</h3>
+      <p>High-converting video ads engineered for Meta, Google, and YouTube — built around proven hooks, CTAs, and emotional triggers.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏆</div>
+      <h3>Testimonial & Case Study Videos</h3>
+      <p>AI-enhanced testimonial videos that build social proof, earn trust, and convert skeptical prospects who need to see real results.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr class="divider-line" /></div>
+
+<!-- HOW IT WORKS / SOLUTION SECTION -->
+<section class="how-it-works" id="how">
+  <div class="how-inner">
+    <div class="section-header">
+      <div class="section-label">Our Process</div>
+      <h2>We Make Sure You Show Up — Everywhere — Consistently</h2>
+      <p>We don't just "make videos." We make sure your business is <strong style="color:var(--mint);">Seen</strong>, <strong style="color:var(--mint);">Recognized</strong>, and <strong style="color:var(--mint);">Remembered</strong> — every single week.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>We Learn Your Business</h4>
+        <p>We understand your brand, your audience, your message, and what makes you different. Everything is tailored — nothing is generic.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We Write Your Content</h4>
+        <p>Our team writes every script, every hook, every CTA. You don't write a word. We build content that captures attention and keeps it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>We Create Your Videos Using AI</h4>
+        <p>Voiceovers, avatars, b-roll, captions, music — fully produced and branded. No camera. No editing. No studio.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>We Publish Across Platforms</h4>
+        <p>We distribute across all your channels — YouTube, Instagram, TikTok, LinkedIn — optimized and scheduled for maximum reach.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px;padding:32px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(255,255,255,0.1);">
+      <p style="font-size:1.1rem;color:rgba(255,255,255,0.9);font-weight:600;line-height:1.8;margin:0;">You don't film. &nbsp;You don't edit. &nbsp;You don't post.<br><span style="color:var(--mint);font-size:1.2rem;">You just show up — everywhere.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO EXAMPLES SECTION -->
+<section class="video-examples-section">
+  <div class="section-header">
+    <div class="section-label">Video Examples</div>
+    <h2>This Is What Your Content Could Look Like</h2>
+    <p>We create content tailored to your business, your audience, and your message.</p>
+    <p style="margin-top:12px;font-size:0.95rem;font-weight:600;color:var(--mint-dark);">👉 See examples below.</p>
+  </div>
+  <div class="video-cards-grid">
+    <div class="video-card">
+      <div class="video-card-screen vc-brand">
+        <div class="vc-bg-grid"></div>
+        <div class="vc-scan"></div>
+        <!-- Animated logo rings -->
+        <div class="vc-rings">
+          <div class="vc-ring r1"></div>
+          <div class="vc-ring r2"></div>
+          <div class="vc-ring r3"></div>
+          <div class="vc-center-dot"></div>
+        </div>
+        <!-- Text lines animating in -->
+        <div class="vc-text-lines">
+          <div class="vc-tl tl1">BRAND STORY</div>
+          <div class="vc-tl tl2">━━━━━━━━━━━━</div>
+          <div class="vc-tl tl3">30 SECONDS</div>
+        </div>
+        <div class="vc-particles">
+          <span class="vcp vcp1"></span><span class="vcp vcp2"></span>
+          <span class="vcp vcp3"></span><span class="vcp vcp4"></span>
+        </div>
+        <div class="video-card-tag">Brand Awareness</div>
+      </div>
+      <div class="video-card-info">
+        <p class="video-card-title">Healthcare Practice</p>
+        <p class="video-card-meta">Instagram Reel · 30 sec</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-card-screen vc-authority">
+        <div class="vc-bg-grid"></div>
+        <div class="vc-scan"></div>
+
+        <!-- Audio waveform at bottom -->
+        <div class="vc-wave-bar">
+          <svg viewBox="0 0 120 24" fill="none">
+            <rect x="0" y="8" width="4" height="8" rx="2" fill="#3ECFA0" class="wb1"/>
+            <rect x="8" y="4" width="4" height="16" rx="2" fill="#3ECFA0" class="wb2"/>
+            <rect x="16" y="6" width="4" height="12" rx="2" fill="#3ECFA0" class="wb3"/>
+            <rect x="24" y="2" width="4" height="20" rx="2" fill="#3ECFA0" class="wb4"/>
+            <rect x="32" y="7" width="4" height="10" rx="2" fill="#3ECFA0" class="wb1"/>
+            <rect x="40" y="5" width="4" height="14" rx="2" fill="#3ECFA0" class="wb2"/>
+            <rect x="48" y="9" width="4" height="6" rx="2" fill="#3ECFA0" class="wb3"/>
+            <rect x="56" y="3" width="4" height="18" rx="2" fill="#3ECFA0" class="wb4"/>
+            <rect x="64" y="7" width="4" height="10" rx="2" fill="#3ECFA0" class="wb1"/>
+            <rect x="72" y="4" width="4" height="16" rx="2" fill="#3ECFA0" class="wb2"/>
+            <rect x="80" y="8" width="4" height="8" rx="2" fill="#3ECFA0" class="wb3"/>
+            <rect x="88" y="5" width="4" height="14" rx="2" fill="#3ECFA0" class="wb4"/>
+            <rect x="96" y="6" width="4" height="12" rx="2" fill="#3ECFA0" class="wb1"/>
+            <rect x="104" y="2" width="4" height="20" rx="2" fill="#3ECFA0" class="wb2"/>
+            <rect x="112" y="8" width="4" height="8" rx="2" fill="#3ECFA0" class="wb3"/>
+          </svg>
+        </div>
+        <div class="video-card-tag">Authority Builder</div>
+      </div>
+      <div class="video-card-info">
+        <p class="video-card-title">Real Estate Agent</p>
+        <p class="video-card-meta">YouTube Short · 60 sec</p>
+      </div>
+    </div>
+    <div class="video-card">
+      <div class="video-card-screen vc-trust">
+        <div class="vc-bg-grid"></div>
+        <div class="vc-scan"></div>
+        <!-- Star rating animation -->
+        <div class="vc-stars">★★★★★</div>
+        <!-- Review quote lines -->
+        <div class="vc-quote-lines">
+          <div class="vc-ql ql1"></div>
+          <div class="vc-ql ql2"></div>
+          <div class="vc-ql ql3"></div>
+        </div>
+
+        <!-- Counter -->
+        <div class="vc-counter">
+          <div class="vc-counter-num">500+</div>
+          <div class="vc-counter-lbl">Happy Clients</div>
+        </div>
+        <div class="vc-particles">
+          <span class="vcp vcp1"></span><span class="vcp vcp2"></span>
+          <span class="vcp vcp3"></span><span class="vcp vcp4"></span>
+        </div>
+        <div class="video-card-tag">Trust Builder</div>
+      </div>
+      <div class="video-card-info">
+        <p class="video-card-title">Law Firm</p>
+        <p class="video-card-meta">TikTok · 45 sec</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider" style="max-width:1100px;margin:0 auto;padding:0 32px;"><hr class="divider-line" /></div>
+
+<!-- PROVEN RESULTS -->
+<section class="proven-results">
+  <div class="section-header">
+    <div class="section-label">By the Numbers</div>
+    <h2>Results That Show Up in Revenue</h2>
+    <p>Not vanity metrics. Real business outcomes — tracked, verified, and reported monthly.</p>
+  </div>
+  <div class="metrics-grid">
+
+    <div class="metric-card mc-1">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">📈</div>
+      <div class="mc-number" data-target="8.3" data-suffix="×">8.3×</div>
+      <div class="mc-label">Engagement Rate Lift</div>
+      <div class="mc-desc">Average engagement increase versus static image or text posts across all client accounts.</div>
+      <div class="mc-bar-track"><div class="mc-bar-fill" style="--fill:83%"></div></div>
+    </div>
+
+    <div class="metric-card mc-2">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">⚡</div>
+      <div class="mc-number">48hr</div>
+      <div class="mc-label">Turnaround Guarantee</div>
+      <div class="mc-desc">First video delivered within 48 hours of onboarding. Revisions returned same business day.</div>
+      <div class="mc-badge">Industry fastest</div>
+    </div>
+
+    <div class="metric-card mc-3">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">🎥</div>
+      <div class="mc-number">2.1M+</div>
+      <div class="mc-label">Organic Views Generated</div>
+      <div class="mc-desc">Total organic views across client channels in the past 12 months — no paid boosting required.</div>
+      <div class="mc-bar-track"><div class="mc-bar-fill" style="--fill:91%"></div></div>
+    </div>
+
+    <div class="metric-card mc-4">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">💰</div>
+      <div class="mc-number">340%</div>
+      <div class="mc-label">Avg. Inbound Lead Growth</div>
+      <div class="mc-desc">Clients see a 340% average increase in inbound leads within 90 days of launching video campaigns.</div>
+      <div class="mc-bar-track"><div class="mc-bar-fill" style="--fill:95%"></div></div>
+    </div>
+
+    <div class="metric-card mc-5">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">🏅</div>
+      <div class="mc-number">94%</div>
+      <div class="mc-label">Client Retention Rate</div>
+      <div class="mc-desc">94% of clients continue after the first 3 months because the results speak for themselves.</div>
+      <div class="mc-bar-track"><div class="mc-bar-fill" style="--fill:94%"></div></div>
+    </div>
+
+    <div class="metric-card mc-6">
+      <div class="mc-glow-orb"></div>
+      <div class="mc-icon-wrap">🚀</div>
+      <div class="mc-number">500+</div>
+      <div class="mc-label">Videos Produced</div>
+      <div class="mc-desc">Over 500 AI videos produced across healthcare, legal, real estate, e-commerce, and professional services.</div>
+      <div class="mc-badge">& counting</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="results" id="results">
+  <div class="section-header">
+    <div class="section-label">Client Results</div>
+    <h2>Real Businesses. Real Growth.</h2>
+    <p>These aren't case studies from Fortune 500 companies. These are local businesses and SMBs just like yours.</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="t-quote-mark">"</div>
+      <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="t-text">Within 30 days of launching our AI video campaign, our Instagram went from 400 followers to over 6,200. We booked 14 new consultations directly from video DMs. The ROI is insane for the price.</p>
+      <div class="t-result">+6,200 Instagram followers & 14 consults in 30 days</div>
+      <hr class="t-divider" />
+      <div class="reviewer">
+        <div class="avatar"><span class="avatar-initials">ML</span></div>
+        <div class="reviewer-info">
+          <div class="name">Dr. Marcus Lee</div>
+          <div class="role">Medical Aesthetics Specialist</div>
+          <div class="company">Luminate Skin Clinic, Atlanta</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="t-quote-mark">"</div>
+      <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="t-text">I was skeptical about AI videos looking "fake," but every client who saw them thought we hired a professional film crew. Listings are spending half the time on the market now. Game changer.</p>
+      <div class="t-result">50% faster listing sell-through after video launch</div>
+      <hr class="t-divider" />
+      <div class="reviewer">
+        <div class="avatar"><span class="avatar-initials">SR</span></div>
+        <div class="reviewer-info">
+          <div class="name">Sandra Reyes</div>
+          <div class="role">Real Estate Broker</div>
+          <div class="company">Reyes Property Group, Miami</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="t-quote-mark">"</div>
+      <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="t-text">We went from zero YouTube presence to 28,000 subscribers in 6 months without spending a dollar on ads. Every video was optimized, consistent, and on-brand. Our organic leads tripled.</p>
+      <div class="t-result">28K subscribers & 3× organic leads in 6 months</div>
+      <hr class="t-divider" />
+      <div class="reviewer">
+        <div class="avatar"><span class="avatar-initials">JK</span></div>
+        <div class="reviewer-info">
+          <div class="name">James Kowalski</div>
+          <div class="role">Founder</div>
+          <div class="company">FinWise Advisory, Chicago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="why-inner">
+    <div class="section-header">
+      <div class="section-label">Why Unified Media</div>
+      <h2>More Than a Video Agency</h2>
+      <p>We're a revenue-obsessed video growth partner — every frame is built to drive measurable business results.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">⚡</div>
+        <div class="why-copy">
+          <h4>Speed Without Compromise</h4>
+          <p>AI-assisted production means 48-hour turnarounds. No waiting weeks for a production house to edit your footage.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🎨</div>
+        <div class="why-copy">
+          <h4>On-Brand, Every Time</h4>
+          <p>Your colors, fonts, tone, and style guide are locked in from day one. Every video is unmistakably yours.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📐</div>
+        <div class="why-copy">
+          <h4>Data-Driven Scripting</h4>
+          <p>We analyze what's working in your niche before writing a single word. Scripts are built on scroll-stopping patterns that convert.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🔄</div>
+        <div class="why-copy">
+          <h4>Unlimited Revisions</h4>
+          <p>Not happy with a video? We revise until it's right — no extra charges, no passive-aggressive sighing.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">📊</div>
+        <div class="why-copy">
+          <h4>Monthly Performance Reports</h4>
+          <p>You get clear, jargon-free reports showing views, engagement, watch time, and lead conversions — every month.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🌐</div>
+        <div class="why-copy">
+          <h4>Multi-Platform Distribution</h4>
+          <p>We publish and optimize for YouTube, Instagram, TikTok, LinkedIn, and your website — one workflow, all platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-header">
+    <div class="section-label">FAQ</div>
+    <h2>Questions We Get Every Day</h2>
+    <p>Straight answers. No runaround.</p>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q">Will AI videos look fake or low-quality?</div>
+    <div class="faq-a">Not at all. Modern AI video tools produce broadcast-quality output. Our clients regularly get compliments assuming they hired a professional film crew. We also add custom branding, motion graphics, and color grading so every video looks premium and unique to your business.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How quickly will I see results?</div>
+    <div class="faq-a">Most clients see measurable engagement increases within the first 30 days. Lead generation results typically peak at the 60–90 day mark as content gains organic traction. We track and report everything so you always know where you stand.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Do I need to appear on camera?</div>
+    <div class="faq-a">No. We offer AI avatar spokesperson videos that deliver your message professionally without you ever turning on a camera. If you do want to appear on camera, we can incorporate footage you shoot on your phone — we handle the rest.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How many videos do I get per month?</div>
+    <div class="faq-a">It depends on your plan. Our packages start at 4 videos per month and scale up to 20+ for businesses needing daily content. We'll recommend the right volume during your free strategy call based on your goals and platform mix.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is there a contract or long-term commitment?</div>
+    <div class="faq-a">We offer month-to-month plans because we're confident results will make you want to stay. Clients who commit to a 3 or 6-month plan receive priority turnaround and discounted rates.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What information do you need to get started?</div>
+    <div class="faq-a">Just your brand basics: logo, brand colors, a short brand description, and your target audience. We handle strategy, scripting, production, and distribution from there. Most clients are fully onboarded within 24 hours of signing up.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <h2>Let Us Show You What This Looks Like for Your Business</h2>
+  <p>We'll create one custom video for you — completely free.<br>No commitment. No pressure.</p>
+  <div class="cta-form-card">
+    <h3>Claim Your Free Custom Video</h3>
+    <p class="form-sub">No filming. No editing. No posting. Just results.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name <span class="req">*</span></label>
+        <input type="text" placeholder="Marcus" />
+      </div>
+      <div class="form-group">
+        <label>Last Name <span class="req">*</span></label>
+        <input type="text" placeholder="Johnson" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Business Email <span class="req">*</span></label>
+      <input type="email" placeholder="you@yourbusiness.com" />
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(555) 000-0000" />
+      </div>
+      <div class="form-group">
+        <label>Business Type <span class="req">*</span></label>
+        <select>
+          <option value="">Select your industry…</option>
+          <option>Healthcare / Medical</option>
+          <option>Real Estate</option>
+          <option>Legal / Law Firm</option>
+          <option>E-Commerce / Retail</option>
+          <option>Finance / Insurance</option>
+          <option>Restaurants / Food</option>
+          <option>Education / Coaching</option>
+          <option>Home Services</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Which platforms do you want to grow?</label>
+      <textarea placeholder="e.g. Instagram Reels, YouTube, TikTok, LinkedIn — tell us where your customers are…"></textarea>
+    </div>
+    <button class="btn-submit">👉 Send Me My Free Custom Video</button>
+    <p class="cta-note">🔒 100% confidential. We don't share your info. <a href="#" id="ctaPrivacyLink">Privacy Policy</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <p class="footer-tagline">AI video production that drives real business growth — delivered fast, priced fairly, results guaranteed.</p>
+      
+    </div>
+    <div class="footer-links-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">AI Brand Story Videos</a></li>
+        <li><a href="#services">Short-Form Reels & Shorts</a></li>
+        <li><a href="#services">AI Avatar Videos</a></li>
+        <li><a href="#services">Product Demo Videos</a></li>
+        <li><a href="#services">Video Ad Creatives</a></li>
+        <li><a href="#services">Testimonial Videos</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#results">Case Studies</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#cta">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-cta-col">
+      <h4>Ready to Grow?</h4>
+      <p>Book your free AI Video Strategy Session. We'll show you exactly what content will grow your audience and drive leads.</p>
+      <a href="#cta" class="footer-cta-btn">Get Started Free →</a>
+      <div class="footer-trust-mini">
+        <div><span>✓</span> No upfront cost</div>
+        <div><span>✓</span> 48hr turnaround</div>
+        <div><span>✓</span> Results guaranteed</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-inner">
+      <div class="footer-legal-links">
+        <a href="#" id="privacyLink">Privacy Policy</a>
+        <a href="#" id="tosLink">Terms of Service</a>
+        <a href="#" id="cookieLink">Cookie Policy</a>
+        <a href="#" id="disclaimerLink">Disclaimer</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 Unified Media Marketing Group. All rights reserved. Results may vary.</div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- ══════════════════════════════════════════
+     PRIVACY POLICY MODAL
+══════════════════════════════════════════ -->
+<div class="legal-modal-overlay" id="privacyModal">
+  <div class="legal-modal">
+    <button class="legal-modal-close" onclick="closeModal('privacyModal')" aria-label="Close">✕</button>
+    <h3>Privacy Policy</h3>
+    <p><strong>Effective Date:</strong> January 1, 2026 &nbsp;|&nbsp; <strong>Unified Media Marketing Group</strong></p>
+    <p>At Unified Media Marketing Group ("UMMG," "we," "us," or "our"), your privacy matters. This Privacy Policy explains how we collect, use, and protect your information when you visit our website or engage our AI video production services.</p>
+    <p><strong>1. Information We Collect</strong><br>When you submit a form, request a free video, or contact us, we may collect your name, business name, email address, phone number, industry, and platform preferences. We also collect standard technical data such as your IP address, browser type, and pages visited via analytics tools.</p>
+    <p><strong>2. How We Use Your Information</strong><br>We use your information to: create and deliver your free custom video, communicate about your campaign, send service updates, and improve our production process. We do not sell your data or use it to run advertisements against you.</p>
+    <p><strong>3. Video Content & Your Business</strong><br>Any business information you share with us — including branding, logos, messaging, and audience details — is used exclusively to produce your videos. We will not use your business content for any other client or purpose without your explicit permission.</p>
+    <p><strong>4. Cookies & Tracking</strong><br>Our website uses cookies to understand visitor behavior, improve user experience, and measure content performance. This includes analytics (Google Analytics) and retargeting pixels (Meta, Google Ads). You may disable cookies through your browser settings.</p>
+    <p><strong>5. Data Sharing</strong><br>We may share your information with trusted service providers — including CRM platforms, video production tools, and distribution systems — under strict confidentiality agreements. We do not sell your data. We may disclose information if required by law.</p>
+    <p><strong>6. Data Retention</strong><br>We retain your data as long as necessary to fulfill our service relationship and meet legal obligations. You may request deletion of your data at any time by contacting us.</p>
+    <p><strong>7. Your Rights</strong><br>Depending on your location, you may have the right to access, correct, export, or delete your personal data. Submit requests to <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8bfbf9e2fdeae8f2cbfee5e2ede2eeefe6eeefe2eae6eca5e8e4e6">[email&#160;protected]</a></strong>. We respond to all verified requests within 30 days.</p>
+    <p><strong>8. Security</strong><br>We use industry-standard security measures — including encryption, access controls, and regular audits — to protect your data. No method is 100% secure, but we take every reasonable precaution.</p>
+    <p><strong>9. Changes to This Policy</strong><br>We may update this policy periodically. Continued use of our site after changes constitutes acceptance of the updated policy.</p>
+    <p><strong>10. Contact Us</strong><br>Unified Media Marketing Group<br>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91e1e3f8e7f0f2e8d1e4fff8f7f8f4f5fcf4f5f8f0fcf6bff2fefc">[email&#160;protected]</a> &nbsp;|&nbsp; Phone: (800) 555-0199</p>
+      <div style="text-align:center; margin-top: 28px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+        <button onclick="closeModal('privacyModal')" style="background: var(--mint); color: white; border: none; padding: 12px 36px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--mint-dark)'" onmouseout="this.style.background='var(--mint)'">Close</button>
+      </div>
+      
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TERMS OF SERVICE MODAL
+══════════════════════════════════════════ -->
+<div class="legal-modal-overlay" id="tosModal">
+  <div class="legal-modal">
+    <button class="legal-modal-close" onclick="closeModal('tosModal')" aria-label="Close">✕</button>
+    <h3>Terms of Service</h3>
+    <p><strong>Effective Date:</strong> January 1, 2026 &nbsp;|&nbsp; <strong>Unified Media Marketing Group</strong></p>
+    <p>These Terms of Service ("Terms") govern your use of the UMMG website and AI video production services. By engaging our services or submitting a request, you agree to these Terms.</p>
+    <p><strong>1. Service Description</strong><br>UMMG provides done-for-you AI video production and multi-platform distribution services. Depending on your plan, we create between 15 and 120 videos per month, tailored to your business, brand, and target audience. You do not film, edit, or post — we handle everything.</p>
+    <p><strong>2. Free Custom Video</strong><br>First-time visitors who request a free custom video receive one (1) AI-produced video at no cost and with no obligation. This video is created based on the information you provide in the intake form. UMMG retains the right to use the video as a portfolio example unless you notify us otherwise in writing.</p>
+    <p><strong>3. Content Ownership</strong><br>Upon full payment for a production package, you own the final delivered video files. UMMG retains the right to use delivered videos in its portfolio, case studies, and promotional materials unless a written opt-out is submitted within 14 days of delivery.</p>
+    <p><strong>4. Revisions & Approvals</strong><br>All plans include revision rounds as specified in your package. Revisions must be submitted within 5 business days of delivery. UMMG is not responsible for delays caused by late client feedback.</p>
+    <p><strong>5. Payment Terms</strong><br>Paid plans are billed according to your selected billing cycle. UMMG reserves the right to pause production if payment is not received by the due date. Refunds are not issued for completed work.</p>
+    <p><strong>6. Client Responsibilities</strong><br>You agree to provide accurate brand information, timely feedback, and lawful use of all delivered content. UMMG is not responsible for outcomes resulting from inaccurate information provided by the client.</p>
+    <p><strong>7. Intellectual Property</strong><br>All original content on this website — including copy, design, and production methodology — is the property of Unified Media Marketing Group. You may not reproduce or repurpose UMMG-owned content without written consent.</p>
+    <p><strong>8. Limitation of Liability</strong><br>UMMG is not liable for indirect or consequential damages including lost revenue or missed opportunities. Total liability is limited to fees paid in the prior 30-day period.</p>
+    <p><strong>9. Termination</strong><br>Either party may terminate the service relationship with written notice. Completed work remains billable upon termination.</p>
+    <p><strong>10. Contact</strong><br>Unified Media Marketing Group<br>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="68040d0f0904281d06010e010d0c050d0c0109050f460b0705">[email&#160;protected]</a> &nbsp;|&nbsp; Phone: (800) 555-0199</p>
+      
+      <div style="text-align:center; margin-top: 28px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+        <button onclick="closeModal('tosModal')" style="background: var(--mint); color: white; border: none; padding: 12px 36px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--mint-dark)'" onmouseout="this.style.background='var(--mint)'">Close</button>
+      </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     COOKIE POLICY MODAL
+══════════════════════════════════════════ -->
+<div class="legal-modal-overlay" id="cookieModal">
+  <div class="legal-modal">
+    <button class="legal-modal-close" onclick="closeModal('cookieModal')" aria-label="Close">✕</button>
+    <h3>Cookie Policy</h3>
+    <p><strong>Effective Date:</strong> January 1, 2026 &nbsp;|&nbsp; <strong>Unified Media Marketing Group</strong></p>
+    <p>This Cookie Policy explains how UMMG uses cookies and similar tracking technologies on our website. By browsing our site, you consent to cookies as described below.</p>
+    <p><strong>1. What Are Cookies?</strong><br>Cookies are small text files stored on your device when you visit a website. They help us recognize your browser, remember preferences, and understand how visitors interact with our content — so we can improve your experience and our service delivery.</p>
+    <p><strong>2. Types of Cookies We Use</strong><br>
+    <strong>Essential Cookies:</strong> Required for the site to function — including form submissions and page navigation. Disabling these may prevent some features from working.<br><br>
+    <strong>Analytics Cookies:</strong> Tools like Google Analytics help us understand which pages are most visited, how long visitors stay, and what content drives the most free video requests. This data guides our content strategy.<br><br>
+    <strong>Marketing & Retargeting Cookies:</strong> We use Meta Pixel and Google Ads cookies to track conversions and show relevant ads to people who've visited our site. These help us stay visible to businesses actively looking for video production services.<br><br>
+    <strong>Preference Cookies:</strong> These remember settings you've applied — such as your industry selection in the intake form — so your experience is consistent on return visits.</p>
+    <p><strong>3. Third-Party Cookies</strong><br>Some cookies are placed by third-party providers including Google, Meta, and our CRM platform. These third parties have their own privacy policies. UMMG does not control third-party cookies.</p>
+    <p><strong>4. Cookie Duration</strong><br>Session cookies expire when you close your browser. Persistent cookies may remain for up to 24 months. Marketing cookies typically last 30–90 days.</p>
+    <p><strong>5. Managing Cookies</strong><br>You can control or delete cookies at any time through your browser settings. Note that disabling certain cookies may affect form submission and personalization features.</p>
+    <p><strong>6. Do Not Track</strong><br>We do not currently alter data collection in response to Do Not Track signals, as no universal standard exists. We remain committed to transparency.</p>
+    <p><strong>7. Updates</strong><br>We may update this Cookie Policy from time to time. Changes take effect when posted with an updated effective date.</p>
+    <p><strong>8. Contact</strong><br>Unified Media Marketing Group<br>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="403032293621233900352e29262925242d252429212d276e232f2d">[email&#160;protected]</a> &nbsp;|&nbsp; Phone: (800) 555-0199</p>
+      <div style="text-align:center; margin-top: 28px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+        <button onclick="closeModal('cookieModal')" style="background: var(--mint); color: white; border: none; padding: 12px 36px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--mint-dark)'" onmouseout="this.style.background='var(--mint)'">Close</button>
+      </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     DISCLAIMER MODAL
+══════════════════════════════════════════ -->
+<div class="legal-modal-overlay" id="disclaimerModal">
+  <div class="legal-modal">
+    <button class="legal-modal-close" onclick="closeModal('disclaimerModal')" aria-label="Close">✕</button>
+    <h3>Disclaimer</h3>
+    <p><strong>Effective Date:</strong> January 1, 2026 &nbsp;|&nbsp; <strong>Unified Media Marketing Group</strong></p>
+    <p>Please read this Disclaimer carefully before using the UMMG website or engaging our AI video production services.</p>
+    <p><strong>1. Results Disclaimer</strong><br>All statistics, case studies, testimonials, and performance metrics referenced on this website — including follower growth, engagement rates, lead generation numbers, and subscriber counts — reflect actual client outcomes but are not guarantees of future results. Individual results will vary based on industry, market, consistency, follow-up, and other factors outside of UMMG's control.</p>
+    <p><strong>2. "Free Custom Video" Offer</strong><br>The free custom video offer is available to new clients only and is subject to intake form completion and UMMG's production capacity at the time of request. UMMG reserves the right to limit or modify this offer at any time without prior notice.</p>
+    <p><strong>3. AI-Generated Content</strong><br>Videos produced by UMMG are created using artificial intelligence tools including AI voiceovers, AI avatars, and automated video assembly. While we take care to ensure quality and brand alignment, AI-generated content may occasionally require human review and revision. We encourage clients to review all delivered content before publishing.</p>
+    <p><strong>4. No Professional Advice</strong><br>Content on this website is for informational and marketing purposes only. Nothing on this site constitutes legal, financial, medical, or professional advice. Always consult a qualified professional for advice specific to your business situation.</p>
+    <p><strong>5. Third-Party Platforms</strong><br>UMMG publishes content to third-party platforms including YouTube, Instagram, TikTok, and LinkedIn. UMMG is not responsible for changes to these platforms' algorithms, policies, or reach metrics that may affect content performance after publication.</p>
+    <p><strong>6. Intellectual Property</strong><br>All website content — including copy, design, graphics, and video samples — is the intellectual property of Unified Media Marketing Group unless otherwise noted. Unauthorized reproduction or distribution is prohibited.</p>
+    <p><strong>7. External Links</strong><br>Our website may contain links to third-party websites. UMMG is not responsible for the content, accuracy, or privacy practices of any linked site.</p>
+    <p><strong>8. Changes to This Disclaimer</strong><br>UMMG reserves the right to update or modify this Disclaimer at any time. Continued use of our website after changes constitutes acceptance of the revised Disclaimer.</p>
+    <p><strong>9. Contact</strong><br>For questions about this Disclaimer, contact us at:<br>Unified Media Marketing Group<br>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adc1c8caccc1edd8c3c4cbc4c8c9c0c8c9c4ccc0ca83cec2c0">[email&#160;protected]</a> &nbsp;|&nbsp; Phone: (800) 555-0199</p>
+      
+      <div style="text-align:center; margin-top: 28px; padding-top: 20px; border-top: 1px solid #E5E7EB;">
+        <button onclick="closeModal('disclaimerModal')" style="background: var(--mint); color: white; border: none; padding: 12px 36px; border-radius: 9px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.background='var(--mint-dark)'" onmouseout="this.style.background='var(--mint)'">Close</button>
+      </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+(function() {
+  function init() {
+
+    // ── FAQ Accordion ───────────────────────────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        var item = q.parentElement;
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // ── Modal open / close (visibility-based — works on all mobile browsers) ──
+    window.openModal = function(id) {
+      var m = document.getElementById(id);
+      if (!m) return;
+      m.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    };
+
+    window.closeModal = function(id) {
+      var m = document.getElementById(id);
+      if (!m) return;
+      m.classList.remove('active');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+
+    var openModal = window.openModal;
+    var closeModal = window.closeModal;
+
+    // ── Close ✕ buttons — large tap target for mobile ──────────────────
+    document.querySelectorAll('.legal-modal-close').forEach(function(btn) {
+      ['click','touchend'].forEach(function(ev) {
+        btn.addEventListener(ev, function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeModal(btn.getAttribute('data-close'));
+        }, {passive: false});
+      });
+    });
+
+    // ── Tap outside modal box closes it ────────────────────────────────
+    ['privacyModal','tosModal','cookieModal','disclaimerModal'].forEach(function(id) {
+      var overlay = document.getElementById(id);
+      if (!overlay) return;
+      ['click','touchend'].forEach(function(ev) {
+        overlay.addEventListener(ev, function(e) {
+          if (e.target === overlay) {
+            e.preventDefault();
+            closeModal(id);
+          }
+        }, {passive: false});
+      });
+    });
+
+    // ── Wire trigger links (click + touchend for mobile) ───────────────
+    function wire(triggerId, modalId) {
+      var el = document.getElementById(triggerId);
+      if (!el) return;
+      ['click','touchend'].forEach(function(ev) {
+        el.addEventListener(ev, function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openModal(modalId);
+        }, {passive: false});
+      });
+    }
+    wire('privacyLink',    'privacyModal');
+    wire('ctaPrivacyLink', 'privacyModal');
+    wire('tosLink',        'tosModal');
+    wire('cookieLink',     'cookieModal');
+    wire('disclaimerLink', 'disclaimerModal');
+
+    // ── Escape key ─────────────────────────────────────────────────────
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        ['privacyModal','tosModal','cookieModal','disclaimerModal'].forEach(closeModal);
+      }
+    });
+  }
+
+  // Run as soon as DOM is ready — handles both early and late loading
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+  <div class="sticky-bottom-bar">
+    <span class="sticky-brand">Unified Media Marketing Group</span>
+    <a href="#cta" class="sticky-cta">Get a Free Audit</a>
+  </div>
+
+<script>
+(function() {
+  var canvas = document.getElementById('wireface-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var t = 0;
+
+  // Build a simplified wireframe face mesh
+  // Face shape: oval vertices
+  function faceVerts() {
+    var verts = [];
+    var cx = 0, cy = 0, cz = 0;
+    // Oval face outline - 16 points
+    for (var i = 0; i < 16; i++) {
+      var a = (i / 16) * Math.PI * 2;
+      verts.push([Math.cos(a) * 0.38, Math.sin(a) * 0.5, 0]);
+    }
+    // Eye sockets - left (8 pts)
+    for (var i = 0; i < 8; i++) {
+      var a = (i / 8) * Math.PI * 2;
+      verts.push([-0.14 + Math.cos(a) * 0.09, -0.1 + Math.sin(a) * 0.07, 0.05]);
+    }
+    // Eye sockets - right (8 pts)
+    for (var i = 0; i < 8; i++) {
+      var a = (i / 8) * Math.PI * 2;
+      verts.push([0.14 + Math.cos(a) * 0.09, -0.1 + Math.sin(a) * 0.07, 0.05]);
+    }
+    // Nose bridge (6 pts)
+    verts.push([0, -0.04, 0.12]);
+    verts.push([-0.05, 0.08, 0.14]);
+    verts.push([0.05, 0.08, 0.14]);
+    verts.push([0, 0.12, 0.12]);
+    verts.push([-0.08, 0.14, 0.08]);
+    verts.push([0.08, 0.14, 0.08]);
+    // Mouth (8 pts)
+    for (var i = 0; i < 8; i++) {
+      var a = (i / 8) * Math.PI * 2;
+      var ry = i < 4 ? 0.04 : 0.025;
+      verts.push([Math.cos(a) * 0.11, 0.22 + Math.sin(a) * ry, 0.08]);
+    }
+    // Cheekbones
+    verts.push([-0.30, 0.05, 0.06]);
+    verts.push([0.30, 0.05, 0.06]);
+    verts.push([-0.28, 0.18, 0.04]);
+    verts.push([0.28, 0.18, 0.04]);
+    // Forehead detail
+    verts.push([-0.15, -0.35, 0.04]);
+    verts.push([0.15, -0.35, 0.04]);
+    verts.push([0, -0.42, 0.02]);
+    // Chin
+    verts.push([0, 0.48, 0.04]);
+    verts.push([-0.12, 0.44, 0.06]);
+    verts.push([0.12, 0.44, 0.06]);
+    return verts;
+  }
+
+  // Build edges connecting vertices
+  function buildEdges(verts) {
+    var edges = [];
+    // Face outline loop (0-15)
+    for (var i = 0; i < 16; i++) edges.push([i, (i+1)%16]);
+    // Cross-face grid lines
+    edges.push([0,8]); edges.push([4,12]); edges.push([2,14]);
+    edges.push([6,10]); edges.push([1,3]); edges.push([5,13]);
+    // Left eye loop (16-23)
+    for (var i = 16; i < 24; i++) edges.push([i, i===23?16:i+1]);
+    edges.push([16,20]); edges.push([17,21]); edges.push([18,22]); edges.push([19,23]);
+    // Right eye loop (24-31)
+    for (var i = 24; i < 32; i++) edges.push([i, i===31?24:i+1]);
+    edges.push([24,28]); edges.push([25,29]); edges.push([26,30]); edges.push([27,31]);
+    // Nose
+    var nb = 32;
+    edges.push([nb,nb+1]); edges.push([nb,nb+2]); edges.push([nb+1,nb+3]);
+    edges.push([nb+2,nb+3]); edges.push([nb+1,nb+4]); edges.push([nb+2,nb+5]);
+    edges.push([nb+4,nb+5]);
+    // Mouth loop (38-45)
+    var mb = 38;
+    for (var i = mb; i < mb+8; i++) edges.push([i, i===mb+7?mb:i+1]);
+    edges.push([mb,mb+4]); edges.push([mb+1,mb+5]); edges.push([mb+2,mb+6]); edges.push([mb+3,mb+7]);
+    // Cheeks connections
+    var cb = 46;
+    edges.push([0,cb]); edges.push([4,cb+1]); edges.push([cb,cb+2]); edges.push([cb+1,cb+3]);
+    edges.push([12,cb+2]); edges.push([8,cb+3]);
+    // Forehead connections
+    var fb = 50;
+    edges.push([15,fb]); edges.push([1,fb+1]); edges.push([fb,fb+2]); edges.push([fb+1,fb+2]);
+    edges.push([0,fb]); edges.push([2,fb+1]);
+    // Chin
+    var chin = 53;
+    edges.push([chin,chin+1]); edges.push([chin,chin+2]); edges.push([12,chin+1]); edges.push([8,chin+2]);
+    return edges;
+  }
+
+  var verts = faceVerts();
+  var edges = buildEdges(verts);
+
+  function project(v, rotY, rotX) {
+    // Apply Y rotation
+    var x = v[0] * Math.cos(rotY) - v[2] * Math.sin(rotY);
+    var z = v[0] * Math.sin(rotY) + v[2] * Math.cos(rotY);
+    var y = v[1];
+    // Apply X rotation
+    var y2 = y * Math.cos(rotX) - z * Math.sin(rotX);
+    var z2 = y * Math.sin(rotX) + z * Math.cos(rotX);
+    // Perspective
+    var fov = 2.2;
+    var depth = z2 + 2.5;
+    var px = (x / depth) * fov * W * 0.42 + W * 0.5;
+    var py = (y2 / depth) * fov * H * 0.42 + H * 0.46;
+    return [px, py, z2];
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    // Subtle dark bg
+    ctx.fillStyle = 'rgba(8, 18, 14, 0.0)';
+    ctx.fillRect(0, 0, W, H);
+
+    // Rotation: slow Y oscillation, slight X tilt
+    var rotY = Math.sin(t * 0.4) * 0.45;
+    var rotX = Math.sin(t * 0.25) * 0.12 + 0.08;
+
+    // Project all verts
+    var proj = verts.map(function(v) { return project(v, rotY, rotX); });
+
+    // Draw edges
+    edges.forEach(function(e) {
+      if (e[0] >= proj.length || e[1] >= proj.length) return;
+      var p1 = proj[e[0]], p2 = proj[e[1]];
+      var avgZ = (p1[2] + p2[2]) / 2;
+      var opacity = Math.max(0.1, Math.min(0.85, 0.5 + avgZ * 0.3));
+      ctx.beginPath();
+      ctx.moveTo(p1[0], p1[1]);
+      ctx.lineTo(p2[0], p2[1]);
+      ctx.strokeStyle = 'rgba(62, 207, 160, ' + opacity + ')';
+      ctx.lineWidth = 0.9;
+      ctx.stroke();
+    });
+
+    // Draw vertex dots
+    proj.forEach(function(p, i) {
+      var isFeature = i >= 16; // eyes, nose, mouth etc
+      ctx.beginPath();
+      ctx.arc(p[0], p[1], isFeature ? 2 : 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = isFeature ? 'rgba(62,207,160,0.9)' : 'rgba(62,207,160,0.5)';
+      ctx.fill();
+    });
+
+    // Scan line
+    var scanY = ((t * 60) % H);
+    var scanGrad = ctx.createLinearGradient(0, scanY - 15, 0, scanY + 15);
+    scanGrad.addColorStop(0, 'rgba(62,207,160,0)');
+    scanGrad.addColorStop(0.5, 'rgba(62,207,160,0.25)');
+    scanGrad.addColorStop(1, 'rgba(62,207,160,0)');
+    ctx.fillStyle = scanGrad;
+    ctx.fillRect(0, scanY - 15, W, 30);
+
+    // Corner HUD elements
+    ctx.fillStyle = 'rgba(62,207,160,0.7)';
+    ctx.font = 'bold 9px monospace';
+    ctx.fillText('AI RENDER', 8, 18);
+    ctx.fillText('3D MESH', W - 58, 18);
+    ctx.fillText('VERTS:' + verts.length, 8, H - 8);
+    ctx.fillText('EDGES:' + edges.length, W - 68, H - 8);
+
+    // Blinking live dot
+    if (Math.floor(t * 2) % 2 === 0) {
+      ctx.beginPath();
+      ctx.arc(W - 16, 12, 4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(62,207,160,0.9)';
+      ctx.fill();
+    }
+
+    t += 0.016;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
